@@ -1,5 +1,15 @@
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
   <div class="container">
+
+    <div class="col-lg-12 sites">
+        
+      <ul>
+        <li><a href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
+        <li><a href="http://hpxdigital.com">HPX Digital</a></li>
+      </ul>
+
+    </div>
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>

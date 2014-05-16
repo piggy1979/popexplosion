@@ -1,5 +1,13 @@
 <header class="banner container" role="banner">
   <div class="row">
+    <div class="col-lg-12" class="sites">
+        
+      <ul>
+        <li><a href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
+        <li><a href="http://hpxdigital.com">HPX Digital</a></li>
+      </ul>
+
+    </div>
     <div class="col-lg-12">
       <a class="brand" href="<?php echo home_url('/') ?>"><?php bloginfo('name'); ?></a>
       <nav class="nav-main" role="navigation">
