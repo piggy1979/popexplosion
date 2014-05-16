@@ -8,6 +8,11 @@
             wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav nav-pills'));
           endif;
         ?>
+        <?php
+          if (has_nav_menu('secondary_nav')) :
+            wp_nav_menu(array('theme_location' => 'secondary_nav', 'menu_class' => 'sec-nav nav-pills'));
+          endif;
+        ?>
       </nav>
     </div>
   </div>
