@@ -1,7 +1,8 @@
 $(function(){
-	$("#lineuplist").mixItUp({
-		
 
-		
+	$("#lineuplist").mixItUp({
+		selectors : {
+			target : 'li.act'
+		}
 	});
 });
