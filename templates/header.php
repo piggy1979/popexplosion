@@ -1,6 +1,6 @@
 <header class="banner container" role="banner">
   <div class="row">
-    <div class="col-lg-12" class="sites">
+    <div class="col-lg-12 sites">
         
       <ul>
         <li><a href="http://halifaxpopexplosion.com">Pop Explosion</a></li>

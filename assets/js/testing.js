@@ -1,1 +1,7 @@
-var i = "philly5";
+$(function(){
+	$("#lineuplist").mixItUp({
+		
+
+		
+	});
+});
