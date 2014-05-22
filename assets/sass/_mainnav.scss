@@ -1,0 +1,8 @@
+.menu-primary-navigation li{
+	float:left;
+	font-family: $headerfont;
+	@include font-size(2.5);
+}
+.menu-secondary-nav li{
+	float:left;
+}

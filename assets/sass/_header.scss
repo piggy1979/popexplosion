@@ -1,0 +1,52 @@
+/**
+* Header styling.
+**/
+header{overflow:hidden;}
+.home header#mainnav{
+	background: url("/img/slide01.jpg") no-repeat 0 0;
+	background-size: cover;
+	overflow:hidden;
+	padding:3.25em 0;
+	width:100%;
+}
+header#mainnav img{
+	display:block;
+	float: left;
+	width:150px;
+	height:150px;
+}
+.sites{
+	width:100%;
+	background-color: #000;
+	color:#fff;
+	overflow:hidden;
+	font-family:$confont;
+	font-weight:500;
+}
+.sites a, .sites span{
+	color: #999;
+	padding:1.25em 1.65em;
+	display:block;
+	@include font-size(1.5);
+}
+.sites a{
+	@include transition-duration(0.3s);
+	@include transition-property(all);
+	&:hover{
+		color:$linkcolor;
+		background-color: $darkbuttonhover;
+	}
+}
+.sites span{
+	color:$bright;
+	background:url(/img/arrow.png) no-repeat 0.65em 50%;
+	background-size:9px 9px;
+}
+.sites a.active{
+	color:$linkcolor;
+	background-color: $darkbuttonhover;
+}
+.sites li{
+	text-transform: uppercase;
+	float:left;
+}

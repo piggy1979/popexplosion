@@ -14,8 +14,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="col-lg-12 sites">
         
       <ul>
-        <li><a href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
         <li><a href="http://hpxdigital.com">HPX Digital</a></li>
+        <li><a class="active" href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
       </ul>
 
     </div>
