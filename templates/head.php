@@ -11,6 +11,8 @@
   <title><?php wp_title('|', true, 'right'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="HandheldFriendly" content="True">
+  <script type="text/javascript" src="//use.typekit.net/qei7hol.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <?php wp_head(); ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo esc_url(get_feed_link()); ?>">
