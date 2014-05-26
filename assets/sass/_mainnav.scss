@@ -1,5 +1,5 @@
 .logo,.navbar-collapse{float:left;}
-#menu-primary-navigation li{
+#menu-primary-navigation li, footer .widget_text h3{
 	float:left;
 	font-family: $headerfont;
 	@include font-size(2.5);

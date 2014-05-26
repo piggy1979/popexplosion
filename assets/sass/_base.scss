@@ -51,6 +51,7 @@ h4{
 }
 p,li{
 	@include font-size(1.3);
+	line-height:21px;
 }
 article li, main li{
 	margin-left: 1em;

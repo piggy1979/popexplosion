@@ -1,7 +1,7 @@
 <div id="socialbar">
 <div class="wrap container">
 <div class="socialcontainer col-sm-offset-1 col-sm-10">
-	<div class="socialicons col-sm-8">
+	<div class="socialicons col-sm-7">
 		<ul>
 			<li><a class="facebook" href="https://www.facebook.com/halifaxpopexplosion"><img src="/img/btn-facebook.jpg" alt="Facebook"></a></li>
 			<li><a class="twitter" href="https://twitter.com/HalifaxPopX"><img src="/img/btn-twitter.jpg" alt="Twitter"></a></li>
@@ -15,7 +15,7 @@
 
 <?php /* REPLACE BELOW WITH PLUGIN CODE FOR EMAIL */ ?>
 
-	<form id="emailform" class="col-sm-4">
+	<form id="emailform" class="col-sm-5">
 		<h3>Get Email Updates</h3>
 		<input type="text" placeholder="Your Email" name="email">
 		<input type="submit" value="GO">
@@ -24,14 +24,31 @@
 </div><!-- socialcontainer -->
 </div><!-- end of social bar -->
 
+<div id="sponsorbar">
+	<div class="wrap container">
+		<div class="col-sm-offset-2 col-sm-8">
+			<ul>
+				<li><img src="/img/sponsor-1.jpg"></li>
+				<li><img src="/img/sponsor-1.jpg"></li>
+				<li><img src="/img/sponsor-1.jpg"></li>
+				<li><img src="/img/sponsor-1.jpg"></li>
+				<li><img src="/img/sponsor-1.jpg"></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of sponsorbar -->
+
+
 <footer class="content-info" role="contentinfo">
   <div class="container">
     <?php dynamic_sidebar('sidebar-footer'); ?>
+    <section id="copyright">
     <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
     <ul>
 		<li><a href="http://halifaxpopexplosion.com">Halifax Pop Explosion</a></li>
 		<li><a href="http://hpxdigital.com">HPX Digital</a></li>
     </ul>
+	</section>
   </div>
 </footer>
 
