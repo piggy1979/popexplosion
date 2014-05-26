@@ -30,7 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 <header id="mainnav">
     <div class="container">
-    <a href="<?php echo home_url(); ?>"><img src="/img/logo-pop.png" alt="<?php bloginfo('name'); ?>"></a>
+    <a href="<?php echo home_url(); ?>" class="logo"><img src="/img/logo-pop.png" alt="<?php bloginfo('name'); ?>"></a>
 
     <nav class="collapse navbar-collapse" role="navigation">
       <?php
