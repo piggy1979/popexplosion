@@ -33,9 +33,31 @@ register_post_type('news',
 );
 
 }
+
+/**
+Clean up functions
+**/
+
 function remove_thumbnail_dimensions( $html ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
 add_action('init', 'create_post_types');
+
+
+// pass hashtag to function it searches for a hashtag and if none exists it adds one otherwise it will return 
+// the original text including the hash.
+function check_hash($n){
+	if(!$n) return;
+	$hashpos = strpos($n, "#");
+
+	if($hashpos === false){
+		$output = "#" . $n;
+	}else if($hashpos == 0){
+		$output = $n;
+	}
+	return $output;
+}
+
+

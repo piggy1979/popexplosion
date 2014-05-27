@@ -16,6 +16,16 @@
       <?php the_content(); ?>
       <div class="articlesocial">
         <a class='btn' href="<?php echo site_url(); ?>news">Back</a>
+
+        <ul class="rrssb-buttons">
+
+        <?php if(get_field('twitter_hash_tag')) : ?>
+        <li><a class="hash" href="#"><?php echo check_hash(get_field('twitter_hash_tag')); ?></a><li>
+        <?php endif; ?>
+
+          <li class="facebook">
+           <a class="popup" href="https://www.facebook.com/sharer/sharer.php?u=http://halifaxpopexplosion.com<?php the_permalink(); ?>">Facebook</a></li>
+        </ul>
       </div><!-- end of articlesocial -->
     </div>
     <div class="navitems">
