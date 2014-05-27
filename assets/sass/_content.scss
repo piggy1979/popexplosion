@@ -1,0 +1,38 @@
+.featuredimage{
+	position:relative;
+	img{
+		display:block;
+		width:100%;
+	}
+	time{
+		position:absolute;
+		top:20px;
+		left:20px;
+		background-color:$linkaltcolor;
+		color:#fff;
+		font-family: $headerfont;
+		text-align:center;
+		padding:15px;
+		@include font-size(1.8);
+	}
+}
+.main h2{
+	margin:0.8em 0 0.5em;
+	text-transform:uppercase;
+}
+.articlesocial{
+	padding:3em 0;
+	border-bottom:1px dashed #ccc;
+	overflow:hidden;
+	margin-bottom:1em;
+}
+
+
+/* sidebar */
+.widget_categories h3{
+	font-family: $bodyfont;
+	@include font-size(1.6);
+	font-weight:800;
+	font-style: normal;
+	text-transform:uppercase;
+}

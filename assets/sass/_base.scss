@@ -53,6 +53,9 @@ p,li{
 	@include font-size(1.3);
 	line-height:21px;
 }
+.main p{
+	margin-bottom:1em;
+}
 article li, main li{
 	margin-left: 1em;
 }
@@ -73,6 +76,7 @@ a.btn{
 	text-decoration:none;
 	@include transition-duration(0.3s);
 	@include transition-property(background-color);	
+	padding:10px 35px;
 }
 .wrap{
 	overflow:hidden;
@@ -80,6 +84,7 @@ a.btn{
 .btn.buy{
 	font-family: $cursive;
 	font-size:2.2rem;
+	padding:10px 15px;
 }
 .btn:hover{
 	background-color: #f7a045;

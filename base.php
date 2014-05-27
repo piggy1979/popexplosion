@@ -17,7 +17,7 @@
     }
   ?>
 
-  <div class="wrap container" role="document">
+  <div class="wrap container maincontainer" role="document">
     <div class="content row">
       <?php if (roots_display_sidebar()) : ?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
