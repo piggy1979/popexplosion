@@ -69,7 +69,16 @@
 
 
 
+
+
+
+
 $(function(){
+
+	$(".flexslider").flexslider({
+		selector: ".slides > div.slide",
+		smoothHeight : true
+	});
 
 	$("#lineuplist").mixItUp({
 		selectors : {

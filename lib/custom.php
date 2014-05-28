@@ -5,8 +5,11 @@
 
 // new image Sizes
 
-add_image_size( 'featured', 1600, 700 );
+add_image_size( 'featured', 1600, 600, true);
 add_image_size( 'profilepic', 220, 180 );
+add_image_size( 'newsitem', 760, 544, true);
+add_image_size( 'ads', 300, 250, true );
+
 
 register_nav_menus(array(
 	'secondary_nav' => __('Secondary Navigation', 'roots')
@@ -32,7 +35,24 @@ register_post_type('news',
 	)
 );
 
+register_post_type('advertisement',
+	array(
+		'labels'	=> array(
+			'name' 			=> __('Advertisements'),
+			'singular_name'	=> __('Advertisement')
+			),
+		'public'		=> true,
+		'has_archive'	=> true,
+		'menu_position'	=> 5,
+		'publicly_queryable' => true,
+		'supports' => array('title', 'thumbnail', 'revisions')
+	)
+);
+
+
 }
+
+
 
 /**
 Clean up functions
@@ -77,20 +97,76 @@ function getNews($n){
 	foreach($query->posts as $post){
 
 		$imageID = get_post_thumbnail_id($post->ID);
-		$image = wp_get_attachment_image_src($imageID, 'large');
+		$image = wp_get_attachment_image_src($imageID, 'newsitem');
 
-
-		$output .= "<section class='news-cta col-md-6'>\n";
-		$output .= "<time class=\"published\" datetime=\"" . processDate($post->post_date, 'c') . "\">" . processDate($post->post_date, 'd') . "<br>" . processDate($post->post_date, 'M') . "</time>\n";
+		$output .= "<section class='news-cta col-sm-6'>\n";
+		$output .= "<time class=\"published\" datetime=\"" . processDate($post->post_date, 'c') . "\">" . processDate($post->post_date, 'M') . "<br>" . processDate($post->post_date, 'd') . "</time>\n";
 		$output .= "<img src=\"".$image[0]."\">\n";
 		$output .= "<h2>". $post->post_title . "</h2>\n";
 		$output .=  "<p>" . limit_words($post->post_content, 30) . "</p>\n";
 		$output .= "</section>\n";
 	}
+	return $output;
+}
 
+function getAds($n = null){
+	
+	$args = array(
+		'post_type'			=> 'advertisement',
+		'posts_per_page'	=> 1,
+		'orderby'			=> 'rand'
+	);
+
+	if($n !== null){
+		//we have a possible id listed. Display ad that matches the id number.
+		$args['p'] = $n;
+	}
+
+	$query = new WP_Query($args);
+	$output = '';
+
+	foreach($query->posts as $post){
+		$imageID = get_post_thumbnail_id($post->ID);
+		$image = wp_get_attachment_image_src($imageID, 'ads');
+		$output .= "<a href='". get_field('url', $post->ID ) ."'>\n";
+		$output .= "<img src=\"".$image[0]."\">\n";
+		$output .= "</a>\n";
+	}
+	return $output;
+}
+
+function featuredSlides($n){
+	$args = array(
+		'post_type'			=> 'marcato_artist',
+		'meta_key'			=> 'featured',
+	//	'meta_value' 		=> 'featured',
+		'posts_per_page'	=> $n
+	);
+
+	$query = new WP_Query($args);
+	$output = "";
+	foreach($query->posts as $post){
+		$imageID = get_post_thumbnail_id($post->ID);
+		$image = wp_get_attachment_image_src($imageID, 'featured');
+		$output .= "<div class='slide'>\n";
+		$output .= "<img src=\"".$image[0]."\">\n";
+		$output .= "<div class='slidecontent'><div class='container'>\n";
+
+		//print_r($post);
+		$output .= "<h2>".$post->post_title."</h2>\n";
+		$output .= "<a href='". get_permalink($post->ID) ."' class='btn'>See Profile</a>\n";
+
+
+		$output .= "</div></div>\n";
+		$output .= "</div>\n";
+	}
+	
 	return $output;
 
+
 }
+
+
 
 function limit_words($string, $word_limit){
 	$newstring = strip_tags($string);

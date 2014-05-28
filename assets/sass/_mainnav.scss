@@ -63,10 +63,11 @@
 		text-transform: uppercase;
 	}
 }
-#menu-primary-navigation .menu-lineup:after{
+#menu-primary-navigation .menu-lineup:after, #menu-primary-navigation .menu-schedule:after{
 	content:"/";
 	color:#fff;
 	margin-left:15px;
-	
+	font-family: 'arial';
+	font-weight:300;
 }
 

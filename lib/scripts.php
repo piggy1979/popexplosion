@@ -11,6 +11,7 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function roots_scripts() {
+//  if(is_front_page()) wp_enqueue_style('flexslider', get_template_directory_uri() . '/assets/js/plugins/flex/flexslider.css', false, '9880649384aea9f1ee166331c0a30daa');
   wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.css', false, '9880649384aea9f1ee166331c0a30daa');
   wp_enqueue_style('mainstyle', get_template_directory_uri() . '/assets/css/style.css', false, '9d80649384aea9f1ee166331c0a30daa');
   // jQuery is loaded using the same method from HTML5 Boilerplate:
@@ -26,8 +27,8 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('flexslider', get_template_directory_uri() . '/assets/js/plugins/flexslider.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'ea691ad1a40c289f49be8c08d8679564', true);
+  wp_register_script('flexslider', get_template_directory_uri() . '/assets/js/plugins/flex/flexslider.min.js', array(), null, false);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '71bf83e47927dfa70ee7147a859c0974', true);
   wp_enqueue_script('modernizr');
   wp_enqueue_script('flexslider');
   wp_enqueue_script('jquery');

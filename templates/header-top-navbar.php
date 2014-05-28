@@ -45,6 +45,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav>
     </div>
 </header>
-
+<?php if(is_front_page() ) get_template_part('templates/slideshow'); ?>
 
 

@@ -5,17 +5,16 @@ header{overflow:hidden;}
 header#mainnav{
 	background-color: $linkaltcolor;
 	@include background-image(linear-gradient($linkaltcolor, $linkcolor));
-		padding:3.25em 0;
-			background-size: cover;
+	padding:3.25em 0;
+	background-size: cover;
 	overflow:hidden;
 	width:100%;
 }
 .home header#mainnav{
-	background: url("/img/slide01.jpg") no-repeat 0 0;
-	background-color:#661111;
-	background-size: cover;
-	overflow:hidden;
+	background:none;
+	position:absolute;
 	width:100%;
+	z-index:200;
 }
 header#mainnav img{
 	display:block;
