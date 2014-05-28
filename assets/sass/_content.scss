@@ -64,8 +64,6 @@
 .sidebar:hover .widget_categories h3:after{
 	width:100%;
 }
-
-
 li.cat-item{
 	margin: 0.5em 0;
 	color: $linkcolor; 
@@ -76,3 +74,33 @@ li.cat-item a{
 		content: '+ ';
 	}
 }
+/* front page items */
+
+.news-cta{
+	position: relative;	
+}
+
+.news-cta img{
+	width: 100%;
+	display:block;
+}
+.news-cta time{
+	position: absolute;
+	top:15px;
+	left: 34px;
+	background-color: $linkaltcolor;
+	color:#fff;
+	font-family: $headerfont;
+	font-weight: 500;
+	text-align:center;
+	padding: 15px;
+}
+.news-cta h2{
+	color: $linkcolor;
+}
+
+
+
+
+
+

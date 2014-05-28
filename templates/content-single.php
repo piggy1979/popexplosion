@@ -6,7 +6,7 @@
 
       <div class="featuredimage">
       <time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date('d') . "<br>" . get_the_date('M'); ?></time>
-       <?php echo get_the_post_thumbnail($page->ID, 'large'); ?>
+       <?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
       </div>
 
       <h2 class="entry-title"><?php the_title(); ?></h2>

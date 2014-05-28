@@ -13,13 +13,23 @@
 	</div>
 
 
-<?php /* REPLACE BELOW WITH PLUGIN CODE FOR EMAIL */ ?>
+<?php 
 
+$emailform = new Impact_Get_Response();
+
+$emailform->creategetresponseMiniForm();
+
+?>
+
+
+<!--
 	<form id="emailform" class="col-sm-5">
 		<h3>Get Email Updates</h3>
 		<input type="text" placeholder="Your Email" name="email">
 		<input type="submit" value="GO">
 	</form>
+-->
+
 </div>
 </div><!-- socialcontainer -->
 </div><!-- end of social bar -->

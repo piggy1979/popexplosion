@@ -60,4 +60,51 @@ function check_hash($n){
 	return $output;
 }
 
+/* pull latest news */
+
+function getNews($n){
+
+	$output= "";
+
+	$args = array(
+		'post_type' 		=> 'post',
+		'posts_per_page'	=> $n,
+		'order'				=> 'DESC'
+		);
+
+	$query = new WP_Query($args);
+
+	foreach($query->posts as $post){
+
+		$imageID = get_post_thumbnail_id($post->ID);
+		$image = wp_get_attachment_image_src($imageID, 'large');
+
+
+		$output .= "<section class='news-cta col-md-6'>\n";
+		$output .= "<time class=\"published\" datetime=\"" . processDate($post->post_date, 'c') . "\">" . processDate($post->post_date, 'd') . "<br>" . processDate($post->post_date, 'M') . "</time>\n";
+		$output .= "<img src=\"".$image[0]."\">\n";
+		$output .= "<h2>". $post->post_title . "</h2>\n";
+		$output .=  "<p>" . limit_words($post->post_content, 30) . "</p>\n";
+		$output .= "</section>\n";
+	}
+
+	return $output;
+
+}
+
+function limit_words($string, $word_limit){
+	$newstring = strip_tags($string);
+    $words = explode(" ",$newstring);
+    return implode(" ",array_splice($words,0,$word_limit));
+}
+
+function processDate($t, $format){
+	$date = strtotime($t);
+	return date($format, $date);
+}
+
+
+
+
+
 
