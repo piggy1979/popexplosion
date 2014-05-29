@@ -148,15 +148,13 @@ function featuredSlides($n){
 	foreach($query->posts as $post){
 		$imageID = get_post_thumbnail_id($post->ID);
 		$image = wp_get_attachment_image_src($imageID, 'featured');
-		$output .= "<div class='slide'>\n";
-		$output .= "<img src=\"".$image[0]."\">\n";
+
+
+		$background = " style='background-image: url(".$image[0].")' ";
+		$output .= "<div class='slide' ".$background.">\n";
 		$output .= "<div class='slidecontent'><div class='container'>\n";
-
-		//print_r($post);
 		$output .= "<h2>".$post->post_title."</h2>\n";
-		$output .= "<a href='". get_permalink($post->ID) ."' class='btn'>See Profile</a>\n";
-
-
+		$output .= "<a href='". get_permalink($post->ID) ."' class='profile'>See Profile</a>\n";
 		$output .= "</div></div>\n";
 		$output .= "</div>\n";
 	}

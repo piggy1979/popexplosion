@@ -1,3 +1,4 @@
+
 /*
  Ridiculously Responsive Social Sharing Buttons
  Team: @dbox, @seagoat
@@ -70,14 +71,33 @@
 
 
 
+function resizeFunction(){
+		var bannerHeight = $('header.banner').height();
+		var windowHeight = $(window).height();
+		var newHeight = windowHeight-bannerHeight;
+		$(".flexslider").height(newHeight);
+		$(".slide").height(newHeight);
+		//console.log("testing");
+
+}
+
+var slowdown = _.throttle(resizeFunction, 100);
+$(window).resize(slowdown);
+
+function init(){
+	resizeFunction();
+}
 
 
 
 $(function(){
 
+	init();
+
 	$(".flexslider").flexslider({
 		selector: ".slides > div.slide",
-		smoothHeight : true
+		useCSS: true,
+		directionNav: false
 	});
 
 	$("#lineuplist").mixItUp({

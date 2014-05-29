@@ -89,7 +89,7 @@ a.btn{
 .btn:hover{
 	background-color: #f7a045;
 }
-a.watchvid{
+a.watchvid, a.profile{
 	background-color:#000;
 	display:block;
 	background:url('/img/watch.png') no-repeat;
@@ -97,6 +97,10 @@ a.watchvid{
 	height:58px;
 	background-size: 146px 58px;
 	text-indent:-10000em;
+}
+a.profile{
+	background: url('/img/profile.png') no-repeat;
+	background-size: 146px 58px;
 }
 .hide{
 	display:none;
