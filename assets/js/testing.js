@@ -72,31 +72,43 @@
 
 
 function resizeFunction(){
-		var bannerHeight = $('header.banner').height();
-		var windowHeight = $(window).height();
-		var newHeight = windowHeight-bannerHeight;
-		$(".flexslider").height(newHeight);
-		$(".slide").height(newHeight);
-		//console.log("testing");
-
+	var bannerHeight = $('header.banner').height();
+	var windowHeight = $(window).height();
+	var newHeight = windowHeight-bannerHeight;
+	$(".flexslider").height(newHeight);
+	$(".slide").height(newHeight);
+	$.each($(".slidecontent"), function(evt){
+		var oheight = $(this).height();
+		var newheight = -( oheight/2)+70;
+		$(this).css({"marginTop" : newheight+"px"});
+	});
 }
 
+function scrollFunction(){
+	var height = $(window).scrollTop();
+	if(height >= 250){
+		console.log(height);
+	$("#mainnav").addClass('fixed');
+	}else{
+	$("#mainnav").removeClass("fixed");
+	}
+}
+
+var scrolldown = _.throttle(scrollFunction, 100);
 var slowdown = _.throttle(resizeFunction, 100);
 $(window).resize(slowdown);
+$(window).scroll(scrolldown);
 
 function init(){
 	resizeFunction();
 }
 
-
-
 $(function(){
-
 	init();
-
 	$(".flexslider").flexslider({
 		selector: ".slides > div.slide",
 		useCSS: true,
+		animationSpeed: 400,
 		directionNav: false
 	});
 

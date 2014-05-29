@@ -3,7 +3,18 @@
 	margin-top:26px;
 	margin-left: 14px;
 	overflow:hidden;
+	position:inherit;
 }
+
+.home header#mainnav.fixed{
+	z-index:301;
+}
+.fixed #menu-primary-navigation{
+	position:fixed;
+	top:0px;
+	z-index: 301;
+}
+
 #menu-primary-navigation li, footer .widget_text h3{
 	float:left;
 	font-family: $headerfont;

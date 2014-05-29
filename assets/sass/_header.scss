@@ -2,6 +2,7 @@
 * Header styling.
 **/
 header{overflow:hidden;}
+
 header#mainnav{
 	background-color: $linkaltcolor;
 	@include background-image(linear-gradient($linkaltcolor, $linkcolor));

@@ -152,7 +152,7 @@ function featuredSlides($n){
 
 		$background = " style='background-image: url(".$image[0].")' ";
 		$output .= "<div class='slide' ".$background.">\n";
-		$output .= "<div class='slidecontent'><div class='container'>\n";
+		$output .= "<div class='slidecontent'><div class='addpadding'>\n";
 		$output .= "<h2>".$post->post_title."</h2>\n";
 		$output .= "<a href='". get_permalink($post->ID) ."' class='profile'>See Profile</a>\n";
 		$output .= "</div></div>\n";
