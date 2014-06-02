@@ -177,8 +177,25 @@ function processDate($t, $format){
 	return date($format, $date);
 }
 
+add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
+add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
+add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
+
+function my_css_attributes_filter($var) {
+  return is_array($var) ? array_intersect($var, array('current-menu-item', 'active', 'current-page-item')) : '';
+}
 
 
+class Page_List_Walker extends Walker_page {
+  function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+  {
+  //	print_r($item);
+    $output .= sprintf( "\n<li class='cat-item'><a href='%s'%s>%s</a></li>\n",
+            get_permalink($item->ID),
+            ( $item->ID === get_the_ID() ) ? ' class="current"' : '',
+            $item->post_title );
+  }
 
+}
 
 

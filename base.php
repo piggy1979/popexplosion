@@ -21,7 +21,34 @@
     <div class="content row">
       <?php if (roots_display_sidebar()) : ?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
-          <?php include roots_sidebar_path(); ?>
+          <?php 
+          if(get_post_type($post) == 'post'){
+            include roots_sidebar_path(); 
+          }else{
+            
+              $parent = null;
+              if ($post->post_parent) {
+                $ancestors=get_post_ancestors($post->ID);
+                $root=count($ancestors)-1;
+                $parent = $ancestors[$root];
+              } else {
+                $parent = $post->ID;
+              }
+
+              $args = array(
+                'child_of'      => $parent,
+                'post_status'   => 'publish',
+                'title_li'      => null,
+                'walker'        => new Page_List_Walker()
+              );
+              echo "<section class=\"widget categories-2 widget_categories\">\n";
+              echo "<h3><a href='".get_permalink($parent)."'>" . get_the_title($parent) . "</a></h3>\n";
+              echo "<ul>\n";
+              wp_list_pages($args);
+              echo "</ul>\n";
+              echo "</section>\n";
+          }
+          ?>
         </aside><!-- /.sidebar -->
       <?php endif; ?>
       <main class="main <?php echo roots_main_class(); ?>" role="main">
