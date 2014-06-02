@@ -6,31 +6,33 @@ Display the music lineup.
 ?>
 
 
-<div id="lineupsel">
-	<ul>
-		<li><span class="btn filter" data-filter=".category-1">Green</span></li>
-		<li><span class="btn filter" data-filter=".comedy">Green</span></li>
-		<li><span class="btn filter" data-filter=".music">Green</span></li>
-		<li><span class="btn filter" data-filter=".talks">Green</span></li>
-		<li><span class="btn filter" data-filter=".film">Green</span></li>
+<div id="lineupsel" class="container">
+	<ul id="lineup-filter">
+		<li>Showing:</li>
 		<li><span class="btn filter active" data-filter="all">All</span></li>
+		<li><span class="btn filter" data-filter=".category-1">Music</span></li>
+		<li><span class="btn filter" data-filter=".comedy">Comedy</span></li>
+		<li><span class="btn filter" data-filter=".music">Film</span></li>
+		<li><span class="btn filter" data-filter=".talks">Pop!Talks</span></li>
+		<li><span class="btn filter" data-filter=".film">Pop!Expo</span></li>
 	</ul>
 
-	<ul id="lineuplist">
+	<h2>Lineup: <span>All</span></h2>
 
+	<ul id="lineuplist">
 		<li><strong>A</strong>
 		<ul>
-			<li class="act category-1"><a href="#">This is an Act 1 </a></li>
-			<li class="act comedy"><a href="#">This is an Act 2</a></li>
-			<li class="act talks"><a href="#">This is an Act 3</a></li>
-			<li class="act film"><a href="#">This is an Act 4</a></li>
-			<li class="act music"><a href="#">This is an Act</a></li>
-			<li class="act film"><a href="#">This is an Act</a></li>
-			<li class="act comedy"><a href="#">This is an Act</a></li>
-			<li class="act talks"><a href="#">This is an Act 6</a></li>
-			<li class="act film"><a href="#">This is an Act 132</a></li>
-			<li class="act music"><a href="#">This is an Act12 3</a></li>
-			<li class="act film"><a href="#">This is an Act 1</a></li>
+			<li class="act category-1"><a href="#">M83</a></li>
+			<li class="act comedy"><a href="#">Sigur Ros</a></li>
+			<li class="act talks"><a href="#">Arcade Fire</a></li>
+			<li class="act film"><a href="#">Die Antwoord</a></li>
+			<li class="act music"><a href="#">Juno Reactor</a></li>
+			<li class="act film"><a href="#">VNV Nation</a></li>
+			<li class="act comedy"><a href="#">Midnight Oil</a></li>
+			<li class="act talks"><a href="#">Capital Cities</a></li>
+			<li class="act film"><a href="#">Karnivool</a></li>
+			<li class="act music"><a href="#">Depeche Mode</a></li>
+			<li class="act film"><a href="#">Air France</a></li>
 		</ul>
 		</li>
 
@@ -96,3 +98,4 @@ Display the music lineup.
 
 
 </div>
+</div><!-- end of lineup div ->

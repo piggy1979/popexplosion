@@ -68,7 +68,7 @@
 
 })(window, jQuery);
 
-
+// CUSTOM JS BELOW
 
 
 function resizeFunction(){
@@ -87,7 +87,6 @@ function resizeFunction(){
 function scrollFunction(){
 	var height = $(window).scrollTop();
 	if(height >= 250){
-		console.log(height);
 	$("#mainnav").addClass('fixed');
 	}else{
 	$("#mainnav").removeClass("fixed");
@@ -99,8 +98,43 @@ var slowdown = _.throttle(resizeFunction, 100);
 $(window).resize(slowdown);
 $(window).scroll(scrolldown);
 
+
+function openClose(evt){
+	evt.stopPropagation();
+	$body.toggle(0);
+	$target.toggleClass('active');
+}
+
+function mobileNav(){
+	// check for mobile nav element. Exit if not present
+	if(!document.getElementById('mainnavmobile')){ return false;}
+
+	$icon = $("#mobile-icon");
+	$target = $("#mainnavmobile nav");
+
+	$target.after("<div id='drop'>");
+	$body = $("#drop");
+	$body.css({
+		'position' : 'fixed',
+		'zIndex' : 200,
+		'display': 'none'
+	});
+	
+	$body.height($(window).height());
+	$body.width($(window).width());
+
+	$icon.on('click touch', openClose);
+	$body.on('click touch', openClose);
+
+
+}
+
+
+
+
 function init(){
 	resizeFunction();
+	mobileNav();
 }
 
 $(function(){

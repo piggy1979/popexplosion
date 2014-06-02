@@ -139,6 +139,88 @@ a.merch span{
 }
 
 
+/* lineup section */
+.lineup .maincontainer{padding-top:10px;}
+#lineup-filter{
+	overflow:hidden;
+	display:inline-block;
+	background-color: #000;
+	color:$linkaltcolor;
+	padding: 0 20px;
+}
+#lineup-filter li{
+	display:inline-block;
+	text-transform:uppercase;
+	font-style:oblique;
+	@include font-size(2);
+	font-family: $confont;
+}
 
 
-
+#lineup-filter li span{
+	color:#fff;	
+	display:block;
+	padding: 13px 10px;
+	&:hover{
+		background-color:#000;
+		cursor: pointer;
+	}
+}
+#lineup-filter li span.active{
+	color: $linkcolor;
+}
+#lineupsel h2{
+	color:#fff;
+	font-style:normal;
+	font-family: $headerfont;
+	font-weight:800;
+	@include font-size(6);
+	padding-bottom:12px;
+	margin-top:30px;
+	border-bottom: 1px dashed #fff;
+}
+#lineuplist strong{
+	margin-top:1em;
+	margin-bottom:10px;
+	display:inline-block;
+	background-color: #000;
+	color: $linkaltcolor;
+	font-family: $headerfont;
+	text-transform:uppercase;
+	@include font-size(2.5);
+	padding:20px;
+	font-weight:800;
+}
+#lineuplist li{
+	margin-left:0;
+}
+#lineuplist li ul{
+	clear:both;
+}
+#lineuplist li.act{
+	text-transform: uppercase;
+}
+#lineuplist li.act a{
+	color: #333;
+	&:hover{
+		color:#fff;
+		text-decoration:none;
+	}
+}
+#lineuplist{text-align:left;}
+#lineuplist li.act{
+	font-family: $confont;
+	@include font-size(3);
+	margin: 10px 10px 0 0px;
+	display:none;
+}
+#lineuplist li.act:after{
+	content: '/';
+	font-family: arial;
+	padding-left:10px;
+	color:$linkaltcolor;
+	display:inline-block;
+}
+#lineuplist li.act:last-child:after{
+	content: '';
+}

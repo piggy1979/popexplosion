@@ -8,11 +8,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PJFGJP');</script>
 <!-- End Google Tag Manager -->
 
-<?php  if(wpmd_is_device()) : ?>
+<?php  if(wpmd_is_phone()) : ?>
+
 
 <header id="mainnavmobile">
+    <div class="mainnavholder">
+      <div id="mobile-icon">
+       <span></span><span></span><span></span>
 
-    <nav class="collapse navbar-collapse" role="navigation">
+      </div>
+      <h1>Halifax Pop Explosion</h1>
+
+    </div>
+
+    <nav role="navigation">
       <?php
         if (has_nav_menu('primary_navigation')) :
           wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_id' => 'mobile_main',  'menu_class' => 'mobile-main'));
@@ -25,7 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav>
 
 </header>
-
+<div id="mobilecontainer">
 <?php  endif; ?>
 
 
@@ -41,8 +50,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </header>
 
 
-<?php if( wpmd_is_notdevice() ) : ?>
+<?php if( wpmd_is_notphone() ) : ?>
 
+<?php if($post->post_name == "lineup"){
+  echo "<div class='lineupbackground'>\n";
+}
+?>
 <header id="mainnav">
     <div class="addpadding">
     <a href="<?php echo home_url(); ?>" class="logo hide"><img src="/img/logo-pop.png" alt="<?php bloginfo('name'); ?>"></a>

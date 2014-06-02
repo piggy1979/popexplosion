@@ -1,9 +1,0 @@
-/* line 1, ../sass/style.scss */
-#lineuplist {
-  text-align: center;
-}
-
-/* line 2, ../sass/style.scss */
-#lineuplist li.act {
-  display: none;
-}

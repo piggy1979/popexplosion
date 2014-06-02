@@ -1,4 +1,4 @@
-<div class="row col-md-9">
+<div class="row col-md-8">
 <?php
 echo getNews(2);
 ?>

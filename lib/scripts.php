@@ -29,7 +29,7 @@ function roots_scripts() {
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
   wp_register_script('flexslider', get_template_directory_uri() . '/assets/js/plugins/flex/flexslider.min.js', array(), null, false);
   wp_register_script('underscore', get_template_directory_uri() . '/assets/vendor/underscore.js', array(), '71bf83e47927dfa70ee7147a859c0974', true);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '8edb6e401675f6836a0db75b35b5ba94', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'a5f0ce4bdb2ec1f6c2774f497a4c436f', true);
   //wp_enqueue_script('modernizr');
   wp_enqueue_script('underscore');
   wp_enqueue_script('flexslider');

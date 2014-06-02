@@ -8,14 +8,18 @@ header#mainnav{
 	@include background-image(linear-gradient($linkaltcolor, $linkcolor));
 	padding:3.25em 0;
 	background-size: cover;
-	overflow:hidden;
 	width:100%;
+	z-index:200;
+}
+.lineup header#mainnav{background:none;}
+.lineupbackground{
+	@include background-image(linear-gradient($linkaltcolor , $linkcolor 40%));	
 }
 .home header#mainnav{
 	background:none;
 	position:absolute;
 	width:100%;
-	z-index:200;
+	overflow:visible;
 }
 header#mainnav img{
 	display:block;

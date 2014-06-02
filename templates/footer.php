@@ -62,5 +62,7 @@ $emailform->creategetresponseMiniForm();
 	</section>
   </div>
 </footer>
-
+<?php  if(wpmd_is_phone()) : ?>
+</div><!-- end of mobile holder -->
+<?php endif; ?>
 <?php wp_footer(); ?>
