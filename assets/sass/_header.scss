@@ -1,7 +1,13 @@
 /**
 * Header styling.
 **/
-header{overflow:hidden;}
+header.banner {
+    height: 58px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 300;
+}
 
 header#mainnav{
 	background-color: $linkaltcolor;
@@ -10,6 +16,7 @@ header#mainnav{
 	background-size: cover;
 	width:100%;
 	z-index:200;
+	overflow:hidden;
 }
 .lineup header#mainnav{background:none;}
 .lineupbackground{
@@ -65,4 +72,56 @@ header#mainnav img{
 .maincontainer{
 	padding-top: 76px;
 	padding-bottom: 76px;
+}
+li.searchbtn{
+	position:absolute;
+	right: 0;
+	text-indent:-1000em;
+}
+li.searchbtn a{
+	padding:19px 29px;
+	background: #292929 url('/img/search.svg') no-repeat 50% 50%;
+	background-size: 17px 17px;
+	@include transition-duration(0.3s);
+	@include transition-property(all);
+	&:hover{
+		background-color: $linkaltcolor;
+	}
+}
+li.searchbtn a.active{
+	outline: none;
+	background-color: $linkaltcolor;
+}
+li.searchbtn a:focus{
+	outline:none;
+}
+#searchform{
+	padding:20px 60px;
+	background-color:$linkaltcolor;
+	overflow:hidden;
+	margin-top:-160px;
+	width:100%;
+	@include transition-duration(0.3s);
+	@include transition-property(all);
+}
+#searchform.active{
+
+	margin-top: 0;
+}
+#searchform label, #searchform input[type="text"]{
+	@include font-size(2);
+	color:#fff;
+	font-family: $headerfont;
+	font-weight:800;
+	text-transform:uppercase;
+	letter-spacing: -0.05em;
+	display:inline-block;
+
+
+}
+#searchform input[type="text"]{
+		border:0;
+		width:80%;
+		background-color:$linkaltcolor;
+
 }

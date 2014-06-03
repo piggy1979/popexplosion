@@ -230,3 +230,41 @@ a.merch span{
 #lineuplist li.act:last-child:after{
 	content: '';
 }
+
+/* gravity form styles */
+.gform_wrapper{
+	max-width:768px;
+	padding:20px;
+}
+.gform_validation_container{
+	display:none;
+}
+.gform_wrapper label.gfield_label{
+	font-weight:600;
+	display:block;
+}
+.gform_wrapper .gfield{
+	overflow:hidden;
+	clear:both;
+	margin: 0 0 20px 0;
+}
+.gform_wrapper input[type="text"], .gform_wrapper textarea{
+	outline: 0;
+	border: 1px solid #ccc;
+	padding:6px 8px;
+	width:100%;
+}
+
+.ginput_left, .ginput_right{
+	width:45%;
+	float:left;
+	display:block;
+}
+.ginput_left label, .ginput_right label{
+	display:block;
+}
+.ginput_right{float:right;}
+.ginput_counter{
+	@include font-size(1);
+	color:#888;
+}

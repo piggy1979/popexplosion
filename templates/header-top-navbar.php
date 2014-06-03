@@ -45,8 +45,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <li><a href="http://hpxdigital.com">HPX Digital</a></li>
         <li><a class="active" href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
         <li><span class="date">October 23-25, 2014 &bull; Halifax,NS</span></li>
+        <li class="searchbtn"><a href="/search">Search</a></li>
       </ul>
     </div>
+
+    <form action="/search" id="searchform">
+      <label>Search:</label><input type="text" name="search">
+    </form>
+
 </header>
 
 

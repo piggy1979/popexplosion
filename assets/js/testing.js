@@ -126,7 +126,22 @@ function mobileNav(){
 	$icon.on('click touch', openClose);
 	$body.on('click touch', openClose);
 
+}
 
+
+function searchBtn(){
+	$btn = $("li.searchbtn a");
+
+	$btn.on('click touch', function(evt){
+		evt.preventDefault();
+		$this = $(this);
+		$form = $("#searchform");
+		$this.toggleClass('active');
+		$form.toggleClass('active');
+		$form.find("input").focus();
+
+
+	});
 }
 
 
@@ -135,6 +150,7 @@ function mobileNav(){
 function init(){
 	resizeFunction();
 	mobileNav();
+	searchBtn();
 }
 
 $(function(){

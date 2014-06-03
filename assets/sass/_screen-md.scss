@@ -4,4 +4,7 @@
 	.slidecontent h2{
 	@include font-size(9.8);
 	}
+	#searchform label, #searchform input[type="text"]{
+		@include font-size(5);
+	}
 }

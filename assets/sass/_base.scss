@@ -22,6 +22,13 @@ $h2size:3rem;
 $h3size:2.4rem;
 $h4size:1.3rem;
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 html{
 	font-size:62.5%;
 }
@@ -65,7 +72,7 @@ a{
 article a{
 	color: $linkcolor;
 }
-a.btn{
+a.btn , input.button{
 	font-family: $bodyfont;
 	font-size:1.4rem;
 	color:#fff;
@@ -77,16 +84,17 @@ a.btn{
 	@include transition-duration(0.3s);
 	@include transition-property(background-color);	
 	padding:10px 35px;
+	border:0;
 }
 .wrap{
 	overflow:hidden;
 }
-.btn.buy{
+.btn.buy, input.button{
 	font-family: $cursive;
 	font-size:2.2rem;
 	padding:10px 15px;
 }
-.btn:hover{
+.btn:hover, .button:hover{
 	background-color: #f7a045;
 }
 a.watchvid, a.profile{
@@ -108,7 +116,9 @@ a.profile{
 }
 .addpadding{padding: 0 19px;}
 .slidecontent .addpadding{padding: 0 50px;}
-
+.contact h1{
+	margin-left:19px;
+}
 
 
 
