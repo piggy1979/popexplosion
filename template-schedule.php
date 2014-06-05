@@ -14,8 +14,13 @@ Template Name: Schedule Template
 		<li><span class="btn filter" data-filter=".film">Pop!Expo</span></li>
 	</ul>
 
+	<form>
+		<button id="extendall">Extended Schedule</button>
+		<button id="collapseall">Compressed Schedule</button>
+	</form>
+
 	<ul id="date-filter">
-		<li><span>October</span></li>
+		<li><span class="month">October</span></li>
 		<li><span class="btn fdate21 filter active" data-filter=".date21">21</span></li>
 		<li><span class="btn fdate22 filter" data-filter=".date22">22</span></li>
 		<li><span class="btn fdate23 filter" data-filter=".date23">23</span></li>
@@ -23,6 +28,7 @@ Template Name: Schedule Template
 		<li><span class="btn fdate25 filter" data-filter=".date25">25</span></li>
 	</ul>
 
+	
 
 </div>
 
@@ -30,9 +36,60 @@ Template Name: Schedule Template
 <div id="mixincontainer">
 
 		<section class="mix music date21">
-			<h3>Name of Event</h3>
-			<p class="eventdescription">This is some description Text</p>
-	
+
+			<div class="eventdescription">
+				<h3>Name of Event</h3>
+				<strong>This is some description Text</strong>
+				<div class="eventextra">
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, reiciendis nulla consequuntur veniam debitis beatae commodi saepe modi nesciunt numquam? Suscipit, officia, assumenda, tempora, veniam iusto ducimus eius dolores quisquam doloremque sunt recusandae sapiente sint voluptas. Corrupti, reprehenderit, nesciunt, aspernatur et voluptate aliquid aliquam esse nobis repudiandae amet minus vitae cupiditate autem nisi assumenda sint quo soluta! Corporis, officia, voluptatibus rerum aperiam soluta cupiditate voluptas ea ut ipsa nihil fugiat sed voluptate itaque enim quibusdam necessitatibus ipsam. Voluptatem, eum, iusto.
+				</p>
+				<div class="articlesocial">
+        			<span class="tag">Music</span>
+
+		        <ul class="rrssb-buttons">
+					<li class="facebook">
+           				<a href="https://www.facebook.com/sharer/sharer.php?u=http://halifaxpopexplosion.com/this-is-a-category-test/" class="popup">Facebook</a>
+           			</li>
+        		</ul>
+        		</div>
+			</div>
+			</div>
+
+			<div class="eventdetails">
+				<div class="eventtime">
+					<strong>Monday, October 21</strong><br>
+					9:00PM - 1:00AM
+				</div>
+				<div class="directions">
+					<strong>Gus' Pub</strong><br>
+					<span>Directions</span>
+				</div>
+
+			</div>
+		</section>
+
+		<section class="mix music date21">
+
+			<div class="eventdescription">
+				<h3>Name of Event</h3>
+				<strong>This is some description Text</strong>
+				<div class="eventextra">
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, reiciendis nulla consequuntur veniam debitis beatae commodi saepe modi nesciunt numquam? Suscipit, officia, assumenda, tempora, veniam iusto ducimus eius dolores quisquam doloremque sunt recusandae sapiente sint voluptas. Corrupti, reprehenderit, nesciunt, aspernatur et voluptate aliquid aliquam esse nobis repudiandae amet minus vitae cupiditate autem nisi assumenda sint quo soluta! Corporis, officia, voluptatibus rerum aperiam soluta cupiditate voluptas ea ut ipsa nihil fugiat sed voluptate itaque enim quibusdam necessitatibus ipsam. Voluptatem, eum, iusto.
+				</p>
+				<div class="articlesocial">
+        			<span class="tag">Music</span>
+
+		        <ul class="rrssb-buttons">
+					<li class="facebook">
+           				<a href="https://www.facebook.com/sharer/sharer.php?u=http://halifaxpopexplosion.com/this-is-a-category-test/" class="popup">Facebook</a>
+           			</li>
+        		</ul>
+        		</div><!-- event extra -->
+			</div>
+			</div>
+
 			<div class="eventdetails">
 				<div class="eventtime">
 					<strong>Monday, October 21</strong><br>
@@ -46,9 +103,26 @@ Template Name: Schedule Template
 		</section>
 
 		<section class="mix music date21">
-			<h3>Name of Event</h3>
-			<p class="eventdescription">This is some description Text</p>
-	
+
+			<div class="eventdescription">
+				<h3>Name of Event</h3>
+				<strong>This is some description Text</strong>
+				<div class="eventextra">
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, reiciendis nulla consequuntur veniam debitis beatae commodi saepe modi nesciunt numquam? Suscipit, officia, assumenda, tempora, veniam iusto ducimus eius dolores quisquam doloremque sunt recusandae sapiente sint voluptas. Corrupti, reprehenderit, nesciunt, aspernatur et voluptate aliquid aliquam esse nobis repudiandae amet minus vitae cupiditate autem nisi assumenda sint quo soluta! Corporis, officia, voluptatibus rerum aperiam soluta cupiditate voluptas ea ut ipsa nihil fugiat sed voluptate itaque enim quibusdam necessitatibus ipsam. Voluptatem, eum, iusto.
+				</p>
+				<div class="articlesocial">
+        			<span class="tag">Music</span>
+
+		        <ul class="rrssb-buttons">
+					<li class="facebook">
+           				<a href="https://www.facebook.com/sharer/sharer.php?u=http://halifaxpopexplosion.com/this-is-a-category-test/" class="popup">Facebook</a>
+           			</li>
+        		</ul>
+        		</div>
+			</div>
+			</div>
+
 			<div class="eventdetails">
 				<div class="eventtime">
 					<strong>Monday, October 21</strong><br>
@@ -58,38 +132,41 @@ Template Name: Schedule Template
 					<strong>Gus' Pub</strong><br>
 					<span>Directions</span>
 				</div>
+
 			</div>
 		</section>
 
-		<section class="mix film date22">
-			<h3>Name of Event</h3>
-			<p class="eventdescription">This is some description Text</p>
-	
+		<section class="mix music date21">
+
+			<div class="eventdescription">
+				<h3>Name of Event</h3>
+				<strong>This is some description Text</strong>
+				<div class="eventextra">
+				<p>	
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, reiciendis nulla consequuntur veniam debitis beatae commodi saepe modi nesciunt numquam? Suscipit, officia, assumenda, tempora, veniam iusto ducimus eius dolores quisquam doloremque sunt recusandae sapiente sint voluptas. Corrupti, reprehenderit, nesciunt, aspernatur et voluptate aliquid aliquam esse nobis repudiandae amet minus vitae cupiditate autem nisi assumenda sint quo soluta! Corporis, officia, voluptatibus rerum aperiam soluta cupiditate voluptas ea ut ipsa nihil fugiat sed voluptate itaque enim quibusdam necessitatibus ipsam. Voluptatem, eum, iusto.
+				</p>
+				<div class="articlesocial">
+        			<span class="tag">Music</span>
+
+		        <ul class="rrssb-buttons">
+					<li class="facebook">
+           				<a href="https://www.facebook.com/sharer/sharer.php?u=http://halifaxpopexplosion.com/this-is-a-category-test/" class="popup">Facebook</a>
+           			</li>
+        		</ul>
+        		</div>
+			</div>
+			</div>
+
 			<div class="eventdetails">
 				<div class="eventtime">
-					<strong>Monday, October 22</strong><br>
+					<strong>Monday, October 21</strong><br>
 					9:00PM - 1:00AM
 				</div>
 				<div class="directions">
 					<strong>Gus' Pub</strong><br>
 					<span>Directions</span>
 				</div>
-			</div>
-		</section>
 
-		<section class="mix film date24">
-			<h3>Name of Event</h3>
-			<p class="eventdescription">This is some description Text</p>
-	
-			<div class="eventdetails">
-				<div class="eventtime">
-					<strong>Monday, October 24</strong><br>
-					9:00PM - 1:00AM
-				</div>
-				<div class="directions">
-					<strong>Gus' Pub</strong><br>
-					<span>Directions</span>
-				</div>
 			</div>
 		</section>
 

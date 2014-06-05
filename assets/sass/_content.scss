@@ -270,31 +270,203 @@ a.merch span{
 }
 /* schedule page */
 #mixincontainer{clear:both;}
-#mixincontainer .mix{display:none;}
-#date-filter{margin-top:50px;}
+#mixincontainer .mix{
+	position:relative;
+	display:none;
+	clear:both;
+	padding:60px 40px;
+		@include font-size(1.3);
+		line-height:21px;
+	h3{
+		text-transform: uppercase;
+	}
+	.eventdescription{
+		@include perspective(600px);
+		width:60%;
+		float:left;
+		h3{@include font-size(3);}
+		strong{
+			color:#999;
+			font-weight:600;
+		}
+		p{
+			margin:30px 0;
+			font-family: $bodyfont;
+		}
+		.articlesocial{
+			border: 0;
+		}
+	}
+	.eventdetails{
+		float:right;
+
+		strong{
+			font-weight:600;
+		}
+	}
+}
+.eventdetails .eventtime,.eventdetails .directions{
+	float: left;
+	margin-right:40px;
+}
+.uparrow{
+	position:absolute;
+	display:block;
+	right:0;
+	float:right;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	background-color:#ccc;
+	
+}
+.uparrow:before{
+	content:'';
+	width:11px;
+	height:11px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-6px;
+	margin-top:-6px;
+	background: #ccc url(../img/arrow-grey.svg) no-repeat 50% 50%;
+	background-size: 11px 11px;
+
+	@include rotate(270deg);
+	@include transition-duration(0.6s);
+	@include transition-property(all);
+}
+
+.uparrow.closed:before{
+	@include rotate(90deg);
+}
+
+
+.eventextra{
+	@include rotateX(0);
+	@include transition-duration(0.6s);
+	@include transition-property(all);
+	@include opacity(1);
+	max-height: 600px;
+	-webkit-transform-origin: top;
+	-moz-transform-origin: top;
+	transform-origin: top;
+
+	transform-style: 'perserve-3d';
+}
+.eventextra.closed{
+	max-height:0px;
+	@include opacity(0);
+	@include rotateX(-90deg);
+}
+
+
+#date-filter{
+	margin-top:50px;
+	overflow:hidden;
+	border-bottom: 15px solid #ee5371;
+	@include transition-duration(1s);
+	@include transition-property(border-color);
+}
 #date-filter li{
 	margin:0;
 	display:block;
 	float:left;
-	@include font-size(3);
+	@include font-size(2);
 	color:#fff;
 	background-color: #000;
-
+	width: 20%;
+}
+#date-filter span.month{
+	display:none;
+	@include font-size(1.5);
+	font-family: $confont;
+	font-weight:300;
+	font-style: oblique;
+	letter-spacing:0em;
 }
 #date-filter span{
+	text-align:center;
+	letter-spacing:-0.06em;
 	color:#fff;
-	padding:35px 30px;
+	padding:35px 20px;
 	display:block;
 	font-weight:800;
-	font-family: $headerfont, arial;
+	cursor:pointer;
+	font-family: $headerfont;
 }
-.active{
-	border-bottom:4px solid #fff;
+#date-filter span.active{
+	text-decoration:underline;
 }
-.fdate21{background-color:#ee5371;}
-.fdate22{background-color:#f66a69;}
-.fdate23{background-color:#f88752;}
-.fdate24{background-color:#fba542;}
-.fdate25{background-color:#ffcc33;}
+
+span.fdate21{background-color:#ee5371;}
+span.fdate22{background-color:#f66a69;}
+span.fdate23{background-color:#f88752;}
+span.fdate24{background-color:#fba542;}
+span.fdate25{background-color:#ffcc33;}
+
+#date-filter.fdate21{border-color:#ee5371;}
+#date-filter.fdate22{border-color:#f66a69;}
+#date-filter.fdate23{border-color:#f88752;}
+#date-filter.fdate24{border-color:#fba542;}
+#date-filter.fdate25{border-color:#ffcc33;}
+#filters{position:relative;}
+#filters form{
+	position:absolute;
+	bottom: 25px;
+	right:0;
+}
+#extendall, #collapseall{
+	font-family: $confont;
+	@include font-size(1.5);
+	text-transform: uppercase;
+	padding: 14px 34px 14px 34px;
+	border:0;
+	margin-left:10px;
+	position:relative;
+}
+#extendall{
+	background-color: #000;
+	color:#fff;
+}
+#collapseall{
+	color: #666;
+	background-color:#e7e7e7;
+}
+#extendall:after, #collapseall:after{
+	content:'';
+	width:11px;
+	height:11px;
+	background-size:11px 11px;
+	background: url(../img/arrow-grey.svg) no-repeat 50% 50%;
+	position:absolute;
+	right: 14px;
+	top: 50%;
+	margin-top: -6px;
+	@include rotate(270deg);
+
+}
+#extendall:after{
+	background: url(../img/arrow-white.svg) no-repeat 50% 50%;
+	@include rotate(90deg);
+}
+
+#collapseall:before, #extendall:before{
+	content: '';
+	display:block;
+	position:absolute;
+	width: 14px;
+	height:2px;
+	background-color:#666;
+	left: 14px;
+	top:50%;
+	margin-top:-1px;
+}
+#extendall:before{
+	background-color:#fff;
+}
+
+
+
 
 

@@ -170,6 +170,7 @@ var buttonFilter = {
       e.preventDefault();
       
       var $button = $(this);
+      
      // console.log($button);
       // If the button is active, remove the active class, else make active and deactivate others.
       if( $button.hasClass('active')){
@@ -177,8 +178,10 @@ var buttonFilter = {
       }else{
 		$button.parent('li').parent('ul').find('.filter').removeClass('active');
 		$button.addClass('active');
-      }
 
+		
+
+      }
       self.parseFilters();
     });
     
@@ -215,10 +218,21 @@ var buttonFilter = {
     }
     // If the output string is empty, show all rather than none:
     
+    var $datefilter = $("#date-filter");
+
+
+
+    if(self.outputString.indexOf('date')){
+    	$datefilter.removeClass();
+    	var count = self.outputString.indexOf('date');
+    	var newclass = self.outputString.substring(count);
+    	$datefilter.addClass("f"+newclass);
+    }
+
 	if(!self.outputString.length){
 		self.outputString = 'all';
 	}
-    console.log(self.outputString);
+  
     // ^ we can check the console here to take a look at the filter string that is produced
     
     // Send the output string to MixItUp via the 'filter' method:
@@ -230,11 +244,38 @@ var buttonFilter = {
 };
 
 
+function collapseSystem(){
+	var sections = $(".mix");
+	$("<div class='uparrow'>").appendTo(sections).on('click touch', function(){
+		$this = $(this);
+		if($this.hasClass("closed") ){
+			$this.removeClass("closed");
+			$this.siblings('.eventdescription').find('.eventextra').removeClass('closed');
+		}else{
+			$this.addClass("closed");
+			$this.siblings('.eventdescription').find('.eventextra').addClass('closed');
+		}
+	});
+	var allitems = $(".uparrow, .eventextra");
+	$("#collapseall").on('click', function(evt){
+		evt.preventDefault();
+		allitems.addClass('closed');
+	});
+	$("#extendall").on('click', function(evt){
+		evt.preventDefault();
+		allitems.removeClass('closed');
+	});
+
+
+}
+
+
 
 
 function setupSchedule(){
 
 	buttonFilter.init();
+	collapseSystem();
 
   $('#mixincontainer').mixItUp({
     controls: {

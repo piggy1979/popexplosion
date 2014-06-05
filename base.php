@@ -15,9 +15,18 @@
     } else {
       get_template_part('templates/header');
     }
+
+    //setup maincontainer so it does not display on every page
+
+    if($post->post_name == "schedule"){
+      $maincontainer = '';
+    }else{
+      $maincontainer = 'maincontainer';
+    }
+
   ?>
 
-  <div class="wrap container maincontainer" role="document">
+  <div class="wrap container <?php echo $maincontainer; ?>" role="document">
     <div class="content row">
       <?php if (roots_display_sidebar()) : ?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">

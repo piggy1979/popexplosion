@@ -38,5 +38,20 @@ body{padding-top:58px;}
 	@include font-size(3.5);
 }
 
+#date-filter li{
+	@include font-size(3);
+}
+#date-filter span.month{
+	@include font-size(2);
+}
+#date-filter li{
+	width: auto;
+}
+#date-filter span.month{
+	display:block;
+}
+
+
+
 }
 

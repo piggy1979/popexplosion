@@ -119,7 +119,15 @@ a.profile{
 .contact h1{
 	margin-left:19px;
 }
-
+span.tag{
+	@include font-size(2);
+	font-family: $confont;
+	font-style:oblique;
+	color:#fff;
+	background-color:$linkaltcolor;
+	padding:4px;
+	text-transform:uppercase;
+}
 
 
 

@@ -7,4 +7,13 @@
 	#searchform label, #searchform input[type="text"]{
 		@include font-size(5);
 	}
+
+/* schedule dates */
+#date-filter li{
+	@include font-size(4);
+}
+#date-filter span.month{
+	@include font-size(3);
+}
+
 }
