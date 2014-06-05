@@ -268,3 +268,33 @@ a.merch span{
 	@include font-size(1);
 	color:#888;
 }
+/* schedule page */
+#mixincontainer{clear:both;}
+#mixincontainer .mix{display:none;}
+#date-filter{margin-top:50px;}
+#date-filter li{
+	margin:0;
+	display:block;
+	float:left;
+	@include font-size(3);
+	color:#fff;
+	background-color: #000;
+
+}
+#date-filter span{
+	color:#fff;
+	padding:35px 30px;
+	display:block;
+	font-weight:800;
+	font-family: $headerfont, arial;
+}
+.active{
+	border-bottom:4px solid #fff;
+}
+.fdate21{background-color:#ee5371;}
+.fdate22{background-color:#f66a69;}
+.fdate23{background-color:#f88752;}
+.fdate24{background-color:#fba542;}
+.fdate25{background-color:#ffcc33;}
+
+

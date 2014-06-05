@@ -22,7 +22,7 @@
       <?php if (roots_display_sidebar()) : ?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
           <?php 
-          if(get_post_type($post) == 'post'){
+          if(get_post_type($post) == 'post' || $post->post_name == "news" || is_archive()){
             include roots_sidebar_path(); 
           }else{
             
@@ -52,7 +52,7 @@
         </aside><!-- /.sidebar -->
       <?php endif; ?>
       <main class="main <?php echo roots_main_class(); ?>" role="main">
-        <?php include roots_template_path(); ?>
+        <?php  include roots_template_path(); ?>
       </main><!-- /.main -->
 
     </div><!-- /.content -->

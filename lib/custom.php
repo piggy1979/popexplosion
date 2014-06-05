@@ -21,6 +21,7 @@ register_nav_menus(array(
 
 function create_post_types(){
 
+/*
 register_post_type('news', 
 	array(
 		'labels'	=> array(
@@ -34,6 +35,7 @@ register_post_type('news',
 		'supports' => array('title', 'excerpt', 'editor', 'thumbnail', 'revisions')
 	)
 );
+*/
 
 register_post_type('advertisement',
 	array(
@@ -82,13 +84,20 @@ function check_hash($n){
 
 /* pull latest news */
 
-function getNews($n){
+
+/*
+# $n = posts on current page
+# $paged = current page number.
+*/
+
+function getNews($n, $paged=null){
 
 	$output= "";
 
 	$args = array(
 		'post_type' 		=> 'post',
 		'posts_per_page'	=> $n,
+		'paged'				=> $paged,
 		'order'				=> 'DESC'
 		);
 
@@ -102,10 +111,11 @@ function getNews($n){
 		$output .= "<section class='news-cta col-sm-6'>\n";
 		$output .= "<time class=\"published\" datetime=\"" . processDate($post->post_date, 'c') . "\">" . processDate($post->post_date, 'M') . "<br>" . processDate($post->post_date, 'd') . "</time>\n";
 		$output .= "<img src=\"".$image[0]."\">\n";
-		$output .= "<h2>". $post->post_title . "</h2>\n";
+		$output .= "<h2><a href='".get_permalink($post->ID)."'>". $post->post_title . "</a></h2>\n";
 		$output .=  "<p>" . limit_words($post->post_content, 30) . "</p>\n";
 		$output .= "</section>\n";
 	}
+
 	return $output;
 }
 
@@ -158,7 +168,7 @@ function featuredSlides($n){
 		$output .= "</div></div>\n";
 		$output .= "</div>\n";
 	}
-	
+
 	return $output;
 
 

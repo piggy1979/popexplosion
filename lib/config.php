@@ -56,7 +56,7 @@ function roots_display_sidebar() {
     array(
       'is_404',
       'is_front_page',
-      array('is_page', array('lineup', 'contact'))
+      array('is_page', array('lineup', 'contact', 'schedule'))
     ),
     /**
      * Page template checks (via is_page_template())
