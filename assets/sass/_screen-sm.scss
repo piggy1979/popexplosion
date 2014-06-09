@@ -50,8 +50,15 @@ body{padding-top:58px;}
 #date-filter span.month{
 	display:block;
 }
-
-
-
+#lineup-filter li{
+	@include font-size(2);
+}
+#lineup-filter li span{
+	padding: 13px 10px;
+}
+#mixincontainer .mix .eventdescription{
+	width:60%;
+}
+.eventdetails{float:right;}
 }
 

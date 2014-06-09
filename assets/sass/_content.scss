@@ -158,7 +158,7 @@ a.merch span{
 	display:inline-block;
 	text-transform:uppercase;
 	font-style:oblique;
-	@include font-size(2);
+	@include font-size(1.5);
 	font-family: $confont;
 }
 
@@ -166,7 +166,7 @@ a.merch span{
 #lineup-filter li span{
 	color:#fff;	
 	display:block;
-	padding: 13px 10px;
+	padding: 10px 0px;
 	&:hover{
 		background-color:#000;
 		cursor: pointer;
@@ -282,7 +282,7 @@ a.merch span{
 	}
 	.eventdescription{
 		@include perspective(600px);
-		width:60%;
+		width:100%;
 		float:left;
 		h3{@include font-size(3);}
 		strong{
@@ -298,7 +298,7 @@ a.merch span{
 		}
 	}
 	.eventdetails{
-		float:right;
+		float:left;
 
 		strong{
 			font-weight:600;
@@ -411,18 +411,15 @@ span.fdate25{background-color:#ffcc33;}
 #date-filter.fdate24{border-color:#fba542;}
 #date-filter.fdate25{border-color:#ffcc33;}
 #filters{position:relative;}
-#filters form{
-	position:absolute;
-	bottom: 25px;
-	right:0;
-}
+
 #extendall, #collapseall{
 	font-family: $confont;
 	@include font-size(1.5);
 	text-transform: uppercase;
 	padding: 14px 34px 14px 34px;
 	border:0;
-	margin-left:10px;
+	margin-top:15px;
+	margin-right:10px;
 	position:relative;
 }
 #extendall{

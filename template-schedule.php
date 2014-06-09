@@ -14,11 +14,6 @@ Template Name: Schedule Template
 		<li><span class="btn filter" data-filter=".film">Pop!Expo</span></li>
 	</ul>
 
-	<form>
-		<button id="extendall">Extended Schedule</button>
-		<button id="collapseall">Compressed Schedule</button>
-	</form>
-
 	<ul id="date-filter">
 		<li><span class="month">October</span></li>
 		<li><span class="btn fdate21 filter active" data-filter=".date21">21</span></li>
@@ -28,7 +23,10 @@ Template Name: Schedule Template
 		<li><span class="btn fdate25 filter" data-filter=".date25">25</span></li>
 	</ul>
 
-	
+	<form>
+		<button id="extendall">Extended Schedule</button>
+		<button id="collapseall">Compressed Schedule</button>
+	</form>
 
 </div>
 
