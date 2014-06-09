@@ -49,8 +49,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </ul>
     </div>
 
-    <form action="/search" id="searchform">
-      <label>Search:</label><input type="text" name="search">
+    <form action="<?php echo site_url(); ?>" id="searchform" method="get">
+      <label>Search:</label><input type="text" name="s">
     </form>
 
 </header>
