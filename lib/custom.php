@@ -216,8 +216,9 @@ function imp_register_sidebars(){
 		'name' 			=> __('Store'),
 		'id'			=> 'woo-shop',
 		'before_title' 	=> '<h3>',
-		'after_title'	=> '</h3>'
-
+		'after_title'	=> '</h3>',
+		'before_widget'	=> '<section class="widget_categories">',
+		'after_widget'	=> '</section>'
 	));
 }
 
