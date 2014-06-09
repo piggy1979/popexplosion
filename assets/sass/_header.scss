@@ -19,7 +19,7 @@ header#mainnav{
 	overflow:hidden;
 }
 .lineup header#mainnav{background:none;}
-.lineupbackground{
+.lineupbackground, body.lineup #mobilecontainer{
 	@include background-image(linear-gradient($linkaltcolor , $linkcolor 40%));	
 }
 .home header#mainnav{
@@ -68,7 +68,9 @@ header#mainnav img{
 .sites li{
 	text-transform: uppercase;
 	float:left;
+	display:none;
 }
+.sites li.searchbtn{display:block;}
 .maincontainer{
 	padding-top: 76px;
 	padding-bottom: 76px;

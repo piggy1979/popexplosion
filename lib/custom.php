@@ -224,6 +224,12 @@ function imp_register_sidebars(){
 
 
 
+add_filter( 'comments_template' , 'block_disqus', 1 );
+function block_disqus($file) {
+if ( 'product' == get_post_type() )
+remove_filter('comments_template', 'dsq_comments_template');
+return $file;
 
+}
 
 

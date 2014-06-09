@@ -1,4 +1,10 @@
-
+div#mobilecontainer {
+position: relative;
+padding-top: 44px;
+}
+.mainnavholder h1 a{
+	color:#fff;
+}
 #mobile_main li, #mobile_secondary li{
 	background-color:#333;
 	width:100%;
@@ -62,6 +68,14 @@
 	@include translateY(0);
 
 }
-
-
+/*specific issues on mobile devices */
+.news #mobilecontainer .main{
+	margin-left: -19px;
+	margin-right: -19px;
+}
+.schedule #mobilecontainer #mixincontainer{
+	margin-left: -19px;
+	margin-right: -19px;
+}
+.uparrow{right:38px;}
 

@@ -67,11 +67,11 @@
 .sidebar:hover .widget_categories h3:after{
 	width:100%;
 }
-li.cat-item{
+li.cat-item, ul.product_list_widget li{
 	margin: 0.5em 0;
 	color: $linkcolor; 
 }
-li.cat-item a{
+li.cat-item a, ul.product_list_widget li a{
 	color: #333;
 	&:before{
 		content: '+ ';
@@ -180,7 +180,7 @@ a.merch span{
 	font-style:normal;
 	font-family: $headerfont;
 	font-weight:800;
-	@include font-size(6);
+	@include font-size(2);
 	padding-bottom:12px;
 	margin-top:30px;
 	border-bottom: 1px dashed #fff;
@@ -194,7 +194,7 @@ a.merch span{
 	font-family: $headerfont;
 	text-transform:uppercase;
 	@include font-size(2.5);
-	padding:20px;
+	padding:6px;
 	font-weight:800;
 }
 #lineuplist li{
@@ -216,7 +216,7 @@ a.merch span{
 #lineuplist{text-align:left;}
 #lineuplist li.act{
 	font-family: $confont;
-	@include font-size(3);
+	@include font-size(2);
 	margin: 10px 10px 0 0px;
 	display:none;
 }
@@ -462,7 +462,12 @@ span.fdate25{background-color:#ffcc33;}
 #extendall:before{
 	background-color:#fff;
 }
+form span.required{
+	@include font-size(1.2);
+	color:#cc2222;
+}
 
+/* shop */
 
 
 

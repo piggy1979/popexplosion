@@ -17,7 +17,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        <span></span><span></span><span></span>
 
       </div>
-      <h1>Halifax Pop Explosion</h1>
+      <h1><a href="<?php echo site_url(); ?>">Halifax Pop Explosion</a></h1>
 
     </div>
 

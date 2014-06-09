@@ -60,5 +60,21 @@ body{padding-top:58px;}
 	width:60%;
 }
 .eventdetails{float:right;}
+
+.sites li{
+	display:block;
+}
+#lineupsel h2{
+	@include font-size(4.5);
+}
+#lineuplist strong{
+	padding:15px;
+}
+#lineuplist li.act{
+	@include font-size(2.5);
+}
+
+
+
 }
 

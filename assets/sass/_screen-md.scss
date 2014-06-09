@@ -21,5 +21,16 @@
 	bottom: 25px;
 	right:0;
 }
+#lineupsel h2{
+	@include font-size(6);
+}
+#lineuplist strong{
+	padding:20px;
+}
+#lineuplist li.act{
+	@include font-size(3);
+}
+
+
 
 }
