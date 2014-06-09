@@ -31,7 +31,7 @@
       <?php if (roots_display_sidebar()) : ?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
           <?php 
-          if(get_post_type($post) == 'post' || $post->post_name == "news" || is_archive()){
+          if(get_post_type($post) == 'post' || $post->post_name == "news" || is_archive() || is_woocommerce()){
             include roots_sidebar_path(); 
           }else{
             

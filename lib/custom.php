@@ -208,4 +208,21 @@ class Page_List_Walker extends Walker_page {
 
 }
 
+/* register shop sidebar */
+
+add_action('widgets_init', 'imp_register_sidebars');
+function imp_register_sidebars(){
+	register_sidebar(array(
+		'name' 			=> __('Store'),
+		'id'			=> 'woo-shop',
+		'before_title' 	=> '<h3>',
+		'after_title'	=> '</h3>'
+
+	));
+}
+
+
+
+
+
 
