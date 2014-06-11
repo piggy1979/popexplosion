@@ -8,6 +8,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PJFGJP');</script>
 <!-- End Google Tag Manager -->
 
+<?php if(wpmd_is_device()) : ?>
+<script type="text/javascript">
+$(function(){
+$("#searchform input").on('focus', function(){
+  $("header.banner").css({position: 'absolute'});
+});
+$("#searchform input").on('blur', function(){
+  $("header.banner").css({position: 'fixed'});
+});
+});
+</script>
+<?php endif; ?>
+
 <?php  if(wpmd_is_phone()) : ?>
 
 
@@ -50,7 +63,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
     <form action="<?php echo site_url(); ?>" id="searchform" method="get">
-      <label>Search:</label><input type="text" name="s">
+      <label>Search:</label><input type="text" name="s" autocomplete="off">
     </form>
 
 </header>

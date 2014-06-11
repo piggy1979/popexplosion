@@ -30,7 +30,9 @@
 #lineuplist li.act{
 	@include font-size(3);
 }
-
+#menu-primary-navigation li a{
+	@include font-size(2);
+}
 
 
 }

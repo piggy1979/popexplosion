@@ -302,6 +302,10 @@ function searchBtn(){
 		$this.toggleClass('active');
 		$form.toggleClass('active');
 		$form.find("input").focus();
+		// check for modernizr touch
+		if($form.hasClass("active")){
+			$form.find("input").blur();
+		}
 	});
 }
 

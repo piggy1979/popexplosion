@@ -35,7 +35,7 @@ header#mainnav.fixed{
 	to {top:0px;opacity:1;}
 }
 #menu-primary-navigation li a{
-	@include font-size(2);
+	@include font-size(1.5);
 }
 #menu-primary-navigation li, footer .widget_text h3{
 	float:left;
