@@ -170,8 +170,27 @@ function featuredSlides($n){
 	}
 
 	return $output;
+}
 
+/* fetch websites that fit a certain string from the Marcato xml feed. */
 
+function getMarWebsite($id, $str)
+{
+	// loop through all post types of marcato artists websites. Exit when string is
+	// found and return the proper details.
+	for($i=0; $i<=10; $i++)
+	{
+		$url = "marcato_artist_website_".$i."_url";
+		$result = get_post_meta($id, $url);
+		
+		//end as soon as no results are pulled.
+		if(!$result[0]) return false;
+
+		//compare result with our passed string. It can be 0 but not false.
+		if( strstr($result[0], $str) !== false ){
+			return $result[0];
+		}
+	}
 }
 
 

@@ -90,6 +90,9 @@ $("#searchform input").on('blur', function(){
         endif;
       ?>
     </nav>
+
+    <a href="#" class='buy btn'>Buy Tickets</a>
+
     </div>
 </header>
 

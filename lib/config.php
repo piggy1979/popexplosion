@@ -64,7 +64,8 @@ function roots_display_sidebar() {
      */
     array(
       'template-custom.php',
-      'page-lineup.php'
+      'page-lineup.php',
+      'single-marcato_artist.php'
     )
   );
 

@@ -91,8 +91,15 @@ a.btn , input.button{
 }
 .btn.buy, input.button{
 	font-family: $cursive;
-	font-size:2.2rem;
-	padding:10px 15px;
+	@include font-size(2.2);
+	padding:13px 18px;
+}
+.btn.buy{
+	@include font-size(2.8);
+	display:none;
+	position:absolute;
+	right:30px;
+	top:30px;
 }
 .btn:hover, .button:hover{
 	background-color: #f7a045;
@@ -114,7 +121,7 @@ a.profile{
 .hide{
 	display:none;
 }
-.addpadding{padding: 0 19px;}
+.addpadding{padding: 0 19px; position:relative;}
 .slidecontent .addpadding{padding: 0 50px;}
 .contact h1{
 	margin-left:19px;
