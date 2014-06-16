@@ -3,8 +3,6 @@
 
 <div class="flexslider">
 	<div class="slides">
-
-
 	<?php
 		echo featuredSlides(5);
 	?>

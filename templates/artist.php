@@ -16,7 +16,13 @@
 
     ?>
     <div class="featuredimage col-sm-5">
-       <?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
+       <?php 
+        if(get_the_post_thumbnail($post->ID, 'large')){
+           echo get_the_post_thumbnail($post->ID, 'large'); 
+        }else{
+          echo "<img src='/img/placeholder.png'>";
+        }
+       ?>
     </div>
     <div class="col-sm-7">
     <header>

@@ -148,8 +148,13 @@ function getAds($n = null){
 function featuredSlides($n){
 	$args = array(
 		'post_type'			=> 'marcato_artist',
-		'meta_key'			=> 'featured',
-	//	'meta_value' 		=> 'featured',
+		'meta_query'		=> array(
+			array(
+				'key'		=> 'featured',
+				'value'		=> 'featured',
+				'compare'	=> 'LIKE'
+			)
+		),
 		'posts_per_page'	=> $n
 	);
 
