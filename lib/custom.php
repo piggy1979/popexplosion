@@ -184,13 +184,19 @@ function getMarWebsite($id, $str)
 		$result = get_post_meta($id, $url);
 		
 		//end as soon as no results are pulled.
-		if(!$result[0]) return false;
+		if(!isset($result[0])) return false;
 
 		//compare result with our passed string. It can be 0 but not false.
 		if( strstr($result[0], $str) !== false ){
 			return $result[0];
 		}
 	}
+}
+
+function getTwitterName($n){
+	$segments = explode("/", $n);
+	$length = count($segments);
+	return '@' . $segments[$length-1];
 }
 
 

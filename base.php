@@ -27,6 +27,10 @@
   ?>
 
   <div class="wrap container <?php echo $maincontainer; ?>" role="document">
+<?php if(is_singular('marcato_artist')) : ?>
+    <a class='back' href="<?php echo site_url(); ?>/lineup/">Back</a>
+<?php endif; ?>
+
     <div class="content row">
       <?php if (roots_display_sidebar()) : ?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">

@@ -1,6 +1,6 @@
 <div id="socialbar">
 <div class="wrap container">
-<div class="socialcontainer col-sm-offset-1 col-sm-10">
+<div class="socialcontainer col-sm-12">
 	<div class="socialicons col-sm-7">
 		<ul>
 			<li><a class="facebook" href="https://www.facebook.com/halifaxpopexplosion"><img src="/img/btn-facebook.jpg" alt="Facebook"></a></li>
