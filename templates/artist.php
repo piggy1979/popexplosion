@@ -35,17 +35,16 @@
           echo "<h5>\n";
           if($twitterhandle){
           echo "<a href='".$twitterhandle."' target='_blank'>".$twittername."</a>\n";
+          if($homebase[0]) echo " &bull; ";
           }
           if($homebase[0]){
           echo $homebase[0];
           }
           echo "</h5>\n";
-
       }
 
       ?>
     </header>
-
 
    
       <?php 
@@ -59,11 +58,18 @@
       if($soundcloudhandle){
         echo "<a class='btn bko' target='_blank' href='".$soundcloudhandle."'>Listen</a>\n";
       }
+      /*
       if(isset($website[0])) 
       {
         $website = get_post_meta($post->ID, "marcato_artist_website_0_url");
         echo "<p class='artistlink'>Visit: <a target='_blank' href='".$website[0]."'>" . $website[0] . "</a></p>\n"; 
       }
+      */
+
+      // loop through all websites.
+      echo siteLoop($post->ID, array("youtube","soundcloud"));
+
+
       ?>
     
     </div><!-- boostrap -->
@@ -81,6 +87,9 @@
         <!-- similar artists -->
         <div class="col-sm-7">
           <h2>Similar Artists</h2>
+          <?php
+            echo getSimilar($post->ID);
+          ?>
         </div>
 
 

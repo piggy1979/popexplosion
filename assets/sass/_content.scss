@@ -21,17 +21,26 @@
 	text-transform:uppercase;
 }
 /* artists */
-.artistlink{float:right;}
 .artistlink{
+			@include font-size(1.5);
+
 	a{
 		font-weight:800;
-		@include font-size(1.5);
-		padding-right:30px;
-		background: url(../img/chain.svg) no-repeat right 50%;
-
+	/*	padding-right:30px; */
+	/*	background: url(../img/chain.svg) no-repeat right 50%; */
 	}
 }
-
+.similar a{
+	font-weight:800;
+	color:#333;
+	padding: 12px 0;
+	display:block;
+	&:hover{
+	}
+}
+.similar img{
+	display:block;
+}
 article.marcato_artist{
 	overflow:hidden;
 	padding-bottom:30px;

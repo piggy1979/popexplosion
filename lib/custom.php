@@ -82,7 +82,9 @@ function check_hash($n){
 	return $output;
 }
 
-/* pull latest news */
+/**
+Pull Functions
+**/
 
 
 /*
@@ -177,6 +179,57 @@ function featuredSlides($n){
 	return $output;
 }
 
+function getSimilar($id){
+	// grab similar categories inside the genre category group.
+	$n = currentTax($id);
+
+	// build query;
+	$args = array(
+		'post_type' 	=> 'marcato_artist',
+		'orderby'		=> 'rand',
+		'post__not_in'	=> array($id),
+		'posts_per_page'=> 3,
+		'tax_query' 	=> array(
+			array(
+				'taxonomy' => 'marcato_genre',
+				'terms'	=> $n
+			)
+		)
+	);
+	$query = new WP_Query($args);
+	$output = "<div class='row similar'>\n";
+	foreach($query->posts as $post){
+
+		$imageID = get_post_thumbnail_id($post->ID);
+		$image = wp_get_attachment_image_src($imageID, 'ads');
+
+		if(isset($image[0])){
+			$newimage = "<a href='".get_permalink($post->ID)."'><img src='".$image[0]."' width='100%' title='".$post->post_title."' ></a>\n";
+		}else{
+			$newimage = "<a href='".get_permalink($post->ID)."'><img src='/img/placeholder.png' width='100%' ></a>\n";
+		}
+
+		$output .= "<div class='col-xs-4'>\n";
+		$output .= $newimage;
+		$output .= "<a href='".get_permalink($post->ID)."'>" . $post->post_title . "</a>\n";
+		$output .= "</div>\n";
+	}
+	$output .= "</div>\n";
+	return $output;
+
+}
+
+function currentTax($id){
+	$term_id = get_the_terms($id, 'marcato_genre');
+
+	foreach($term_id as $genre){
+		$terms[] = $genre->term_id;
+	}
+
+	return $terms;
+}
+
+
 /* fetch websites that fit a certain string from the Marcato xml feed. */
 
 function getMarWebsite($id, $str)
@@ -197,14 +250,46 @@ function getMarWebsite($id, $str)
 		}
 	}
 }
+// $n is the filters. Pass an array;
+function siteLoop($id, $n = null){
+	// loop through all post types of marcato artists websites. Exit when string is
+	// found and return the proper details.\
+	$output = '';
+	for($i=0; $i<=10; $i++)
+	{
+		$url = "marcato_artist_website_".$i."_url";
+		$result = get_post_meta($id, $url);	
+		$name = "marcato_artist_website_".$i."_name";
+		$sitename = get_post_meta($id, $name);
+
+		if(!isset($result[0])) return false;
+		if($n){
+			$site_url = URLinArray($result[0], $n);
+			if($site_url){
+				echo "<p class=\"artistlink\">" . $sitename[0] . ": <a href=\"".$site_url."\" target=\"_blank\">".$site_url."</a></p>\n";
+				//$output .= "<p class=\"artistlink\">" . $sitename[0] . ": <a href=\"".$site_url."\" target=\"_blank\">".$site_url."</a></p>\n";
+			}
+		}
+	}
+
+	return $output;
+}
+
+function URLinArray($url, $array){
+	if($url == null) return false;
+	foreach($array as $value){
+		if( strstr($url, $value) == true ){
+			return false;
+		}
+	}
+	return $url;
+}
 
 function getTwitterName($n){
 	$segments = explode("/", $n);
 	$length = count($segments);
 	return '@' . $segments[$length-1];
 }
-
-
 
 function limit_words($string, $word_limit){
 	$newstring = strip_tags($string);
@@ -224,7 +309,6 @@ add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
 function my_css_attributes_filter($var) {
   return is_array($var) ? array_intersect($var, array('current-menu-item', 'active', 'current-page-item')) : '';
 }
-
 
 class Page_List_Walker extends Walker_page {
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)

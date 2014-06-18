@@ -70,6 +70,10 @@ article li, main li{
 a{
 	text-decoration:none;
 }
+a:hover, a:focus{
+	color: $linkaltcolor;
+	text-decoration: none;
+}
 article a{
 	color: $linkcolor;
 }
@@ -79,7 +83,6 @@ h5{
 	font-style: oblique;
 	font-family: $bodyfont;
 	margin-bottom:30px;
-	a{color:#999;}
 }
 a.btn , input.button, a.back{
 	font-family: $bodyfont;
@@ -111,6 +114,8 @@ a.back{
 	font-family: $cursive;
 	@include font-size(2.2);
 	padding:13px 18px;
+	-webkit-font-smoothing:antialiased;
+
 }
 header .btn.buy{
 	@include font-size(2.8);
@@ -126,14 +131,24 @@ a.bko{
 	width:145px;
 	height: 57px;
 	font-family: $cursive;
-	@include font-size(2.2);
+	@include font-size(2.5);
 	background: url('/img/blackorangebutton.png') no-repeat;
 	background-size: 145px 57px;
 	text-align:center;
 	padding-left:0px;
 	padding-right:10px;
+	padding-top:12px;
+	margin-top:20px;
+	margin-bottom:50px;
+	margin-right:5px;
+	-webkit-font-smoothing:antialiased;
+	display:inline-block;
+	@include translate(20px, 0px);
+	@include transition-duration(0.3s);
+	@include transition-property(all);	
 	&:hover{
 		background-color: transparent;
+		@include translate(10px, 10px);
 	}
 }
 a.watchvid, a.profile{
