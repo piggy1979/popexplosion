@@ -179,6 +179,47 @@ function featuredSlides($n){
 	return $output;
 }
 
+/* GET LINUP LISTING */
+
+function fetchLineup(){
+	$args = array(
+		'post_type'			=> 'marcato_artist',
+		'posts_per_page'	=> -1,
+		'orderby'			=> 'title',
+		'order'				=> 'ASC'
+	);
+
+	$query = new WP_Query($args);
+	$output = "<ul id=\"lineuplist\">";
+	$currentAlpha = '-';
+
+	foreach($query->posts as $key=>$post){
+
+		// get categories for current page.
+		$cats = get_the_terms($post->ID, 'artist_tag');
+		$classlist = "";
+		if($cats){
+			foreach($cats as $cat){
+				$classlist .= " " . $cat->slug;
+			}
+		}
+
+		// case insesitive match. If it does not = 0 then it does not match.
+		if(strcasecmp($post->post_title[0],$currentAlpha) != 0 ){
+
+			if($key != 0) $output .= "</ul></li>\n"; 
+			$currentAlpha = $post->post_title[0];
+
+			$output .= "<li><strong>". $currentAlpha . "</strong>\n<ul>";
+		}
+		$output .= "<li class='act ".$classlist."'><a href='" . get_permalink($post->ID) . "'>".$post->post_title."</a></li>\n"; 
+	}
+	$output .= "</ul></li></ul>\n";
+	return $output;
+
+}
+
+
 function getSimilar($id){
 	// grab similar categories inside the genre category group.
 	$n = currentTax($id);
