@@ -9,12 +9,12 @@ Template Name: News Template
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-		<h1 class="container">News</h1>
+		<h1>News</h1>
 <?php
 	
 	
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	echo getNews(6, $paged);
+	echo getNews(6, $paged, true);
 
 		if($paged){
 			echo get_previous_posts_link( 'TEST Older posts' );

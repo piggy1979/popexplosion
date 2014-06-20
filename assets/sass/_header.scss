@@ -127,5 +127,26 @@ li.searchbtn a:focus{
 		border:0;
 		width:75%;
 		background-color:$linkaltcolor;
+}
+li.shopcart{
+	position:absolute;
+	right: 80px;
+}
+li.shopcart span{
+	color:#999;
+	@include font-size(1.5);
 
+}
+li.shopcart strong{
+	background-color: $linkcolor;
+	color: #fff;
+	padding:0 6px;
+	margin-left:6px;
+	@include font-size(1.1);
+	vertical-align:top;
+}
+li.shopcart span{
+	background: url(../img/cart.svg) no-repeat 0 50%;
+	background-size: 15px 15px;
+	padding: 1.25em;
 }

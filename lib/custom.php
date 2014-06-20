@@ -92,7 +92,7 @@ Pull Functions
 # $paged = current page number.
 */
 
-function getNews($n, $paged=null){
+function getNews($n, $paged=null, $list = null){
 
 	$output= "";
 
@@ -107,15 +107,44 @@ function getNews($n, $paged=null){
 
 	foreach($query->posts as $post){
 
-		$imageID = get_post_thumbnail_id($post->ID);
-		$image = wp_get_attachment_image_src($imageID, 'newsitem');
+		if($list){
 
-		$output .= "<section class='news-cta col-sm-6'>\n";
-		$output .= "<time class=\"published\" datetime=\"" . processDate($post->post_date, 'c') . "\">" . processDate($post->post_date, 'M') . "<br>" . processDate($post->post_date, 'd') . "</time>\n";
-		$output .= "<img src=\"".$image[0]."\">\n";
-		$output .= "<h2><a href='".get_permalink($post->ID)."'>". $post->post_title . "</a></h2>\n";
-		$output .=  "<p>" . limit_words($post->post_content, 30) . "</p>\n";
-		$output .= "</section>\n";
+
+			$authorname = get_the_author_meta( 'display_name', $post->post_author ); 
+			$authorlink = get_the_author_meta( 'user_email', $post->post_author ); 
+
+			$cats = get_the_category($post->ID);
+			$categories = "";
+			foreach($cats as $cat){
+				$categories .= $cat->name . " "; 
+			}
+
+
+		//	print_r($cats);
+
+			$output .= "<article class='post category-music type-post'>\n";
+			$output .= "<header><h2 class='entry-title'>\n";
+			$output .= "<a href=\"".get_permalink($post->ID)."\">".$post->post_title . "</a></h2>\n";
+
+			$output .= "<p class='byline author vcard'>\n";
+			$output .= "Posted By <a class='fn' rel='author' href='".$authorlink."'>".$authorname."</a>\n";
+			$output .= " Category: " . $categories . "</p>\n";
+			$output .= "</header>\n";
+			$output .= "<div class='entry-summary'><p>" . limit_words($post->post_content, 60) . "</p></div>\n";
+
+			$output .= "</article>\n";
+		}else{
+	
+			$imageID = get_post_thumbnail_id($post->ID);
+			$image = wp_get_attachment_image_src($imageID, 'newsitem');
+	
+			$output .= "<section class='news-cta col-sm-6'>\n";
+			$output .= "<time class=\"published\" datetime=\"" . processDate($post->post_date, 'c') . "\">" . processDate($post->post_date, 'M') . "<br>" . processDate($post->post_date, 'd') . "</time>\n";
+			$output .= "<img src=\"".$image[0]."\">\n";
+			$output .= "<h2><a href='".get_permalink($post->ID)."'>". $post->post_title . "</a></h2>\n";
+			$output .=  "<p>" . limit_words($post->post_content, 30) . "</p>\n";
+			$output .= "</section>\n";
+		}
 	}
 
 	return $output;
@@ -326,6 +355,24 @@ function URLinArray($url, $array){
 	return $url;
 }
 
+function shoppingCart(){
+	global $woocommerce;
+
+	$cart_url = $woocommerce->cart->get_cart_url();
+	$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
+	$cart_contents_count = $woocommerce->cart->cart_contents_count;
+
+	if($cart_contents_count >0){
+		return "<span>Cart" . "<strong>" . $cart_contents_count . "</strong></span>\n";
+	}else{
+		return false;
+	}
+
+
+//	return "test";
+}
+
+
 function getTwitterName($n){
 	$segments = explode("/", $n);
 	$length = count($segments);
@@ -386,5 +433,9 @@ remove_filter('comments_template', 'dsq_comments_template');
 return $file;
 
 }
+
+
+
+
 
 

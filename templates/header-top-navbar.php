@@ -58,6 +58,7 @@ $("#searchform input").on('blur', function(){
         <li><a href="http://hpxdigital.com">HPX Digital</a></li>
         <li><a class="active" href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
         <li><span class="date">October 23-25, 2014 &bull; Halifax,NS</span></li>
+        <li class="shopcart"><?php echo shoppingCart(); ?></li>
         <li class="searchbtn"><a href="/search">Search</a></li>
       </ul>
     </div>

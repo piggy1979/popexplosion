@@ -100,7 +100,11 @@ header#mainnav.fixed{
 	float:left;
 	@include font-size(1.4);
 	padding:16px;
-	a{color:#fff; text-transform: uppercase;}
+	a{color:#fff; text-transform: uppercase;
+		&:hover{
+			color: $linkcolor;
+		}
+	}
 }
 /*
 #menu-primary-navigation .menu-lineup:after, #menu-primary-navigation .menu-schedule:after{
