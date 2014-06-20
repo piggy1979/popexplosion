@@ -41,6 +41,10 @@
 .similar img{
 	display:block;
 }
+article.post{
+	padding-bottom:15px;
+	border-bottom:1px dashed #ccc;
+}
 article.marcato_artist{
 	overflow:hidden;
 	padding-bottom:30px;
@@ -53,7 +57,7 @@ article.marcato_artist div {padding-bottom:40px;}
 	border-top:1px dashed #ccc;
 }
 .articlesocial{
-	padding:3em 0;
+	padding:3em 0 0;
 	border-bottom:1px dashed #ccc;
 	overflow:hidden;
 	margin-bottom:1em;
@@ -307,6 +311,8 @@ a.merch span{
 	position:relative;
 	display:none;
 	clear:both;
+	overflow:hidden;
+	border-bottom: 1px dashed #ccc;
 	padding:60px 40px;
 		@include font-size(1.3);
 		line-height:21px;

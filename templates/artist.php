@@ -70,8 +70,30 @@
       echo siteLoop($post->ID, array("youtube","soundcloud"));
 
 
+      $connected = new WP_Query( array(
+        'connected_type'  => 'posts_to_pages',
+        'connected_items' => get_queried_object(),
+        'nopaging'        => true
+      ));
+
+      if($connected->have_posts()){
+
+        echo "<h2>Current Shows</h2>\n";
+      foreach($connected->posts as $post){
+          echo "<a href='".get_permalink($post->ID)."'>" . $post->post_title . "</a>\n";
+      }
+
+
+
+      }
+
+
+
       ?>
     
+
+
+
     </div><!-- boostrap -->
   
     <div class='clear'>

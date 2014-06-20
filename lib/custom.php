@@ -83,9 +83,23 @@ function check_hash($n){
 }
 
 /**
-Pull Functions
+CONNECTION TYPES
+* These connection types require the use of the posts 2 posts plugin.
 **/
 
+function my_connection_types() {
+    p2p_register_connection_type( array(
+        'name' => 'posts_to_pages',
+        'from' => 'marcato_show',
+        'to' => 'marcato_artist'
+    ) );
+}
+add_action( 'p2p_init', 'my_connection_types' );
+
+
+/**
+Pull Functions
+**/
 
 /*
 # $n = posts on current page
@@ -409,6 +423,16 @@ class Page_List_Walker extends Walker_page {
   }
 
 }
+
+
+class Page_Options_Walker extends Walker_page{
+  function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+  {
+  //	print_r($item);
+    $output .= sprintf( "\n<option value='%s' %s>%s</option>\n", get_permalink($item->ID), ( $item->ID === get_the_ID() ) ? ' selected' : '', $item->post_title );
+  }	
+}
+
 
 /* register shop sidebar */
 

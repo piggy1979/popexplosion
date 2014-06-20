@@ -40,7 +40,7 @@ body{
 h1{
 	font-family:$headerfont;
 	font-weight:800;
-	@include font-size(4);
+	@include font-size(2.5);
 	text-transform:uppercase;
 }
 h2,h3{
@@ -182,9 +182,3 @@ span.tag{
 	padding:4px;
 	text-transform:uppercase;
 }
-
-
-
-
-
-

@@ -54,12 +54,43 @@
                 'title_li'      => null,
                 'walker'        => new Page_List_Walker()
               );
+              if(wpmd_is_phone()){
+       
+              $args = array(
+                'child_of'      => $parent,
+                'post_status'   => 'publish',
+                'title_li'      => null,
+                'walker'        => new Page_Options_Walker()
+              );
+
+              if(get_pages($args)){
+              echo "<section style='margin-bottom:10px;'>\n";
+              echo "<select id='navselect'>\n";
+              wp_list_pages($args);
+              echo "</select>\n";
+              echo "</section>\n";
+              }
+              ?>
+              <script>
+              $(function(){
+                $nav = $("#navselect");
+                $nav.on('change', function(){
+                  location.href = $(this).val();
+                  console.log("testing");
+                }); 
+              });
+              </script>
+
+
+              <?php
+              }else{
               echo "<section class=\"widget categories-2 widget_categories\">\n";
               echo "<h3><a href='".get_permalink($parent)."'>" . get_the_title($parent) . "</a></h3>\n";
               echo "<ul>\n";
               wp_list_pages($args);
               echo "</ul>\n";
               echo "</section>\n";
+              }
           }
           ?>
         </aside><!-- /.sidebar -->
