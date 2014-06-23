@@ -61,7 +61,8 @@ Template Name: Schedule Template
 				</div>
 				<div class="directions">
 					<strong>Gus' Pub</strong><br>
-					<span>Directions</span>
+					<a class='maps fancybox.iframe' href="https://www.google.com/maps/embed/v1/place?key=AIzaSyA5I8Q4uvg4UCgiPZgBQ_rLC7aBuTT0eFw&q=The+Nook,Halifax+NS">Directions</a>
+
 				</div>
 
 			</div>

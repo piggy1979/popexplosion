@@ -143,12 +143,12 @@ a.bko{
 	margin-right:5px;
 	-webkit-font-smoothing:antialiased;
 	display:inline-block;
-	@include translate(20px, 0px);
-	@include transition-duration(0.3s);
+	@include translate(0px, 0px);
+	@include transition-duration(0.2s);
 	@include transition-property(all);	
 	&:hover{
 		background-color: transparent;
-		@include translate(10px, 10px);
+		@include translate(3px, 2px);
 	}
 }
 a.watchvid, a.profile{

@@ -7,6 +7,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PJFGJP');</script>
 <!-- End Google Tag Manager -->
+<script type="text/javascript">
+$(function(){
+  $(".maps").fancybox({
+    fitToView: true,
+    maxWidth:1000,
+    maxHeight: 700,
+    openEffect: 'none',
+    closeEffect: 'none',
+    autoSize: false
+  });
+});
+</script>
 
 <?php if(wpmd_is_device()) : ?>
 <script type="text/javascript">

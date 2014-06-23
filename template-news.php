@@ -8,7 +8,7 @@ Template Name: News Template
 <div id="main-content" class="main-content">
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content container" role="main">
 		<h1>News</h1>
 <?php
 	

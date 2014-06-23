@@ -48,6 +48,7 @@ article.post{
 article.marcato_artist{
 	overflow:hidden;
 	padding-bottom:30px;
+	padding-top:30px;
 }
 article.marcato_artist div {padding-bottom:40px;}
 .related{
@@ -57,7 +58,7 @@ article.marcato_artist div {padding-bottom:40px;}
 	border-top:1px dashed #ccc;
 }
 .articlesocial{
-	padding:3em 0 0;
+	padding:3em 0 2em;
 	border-bottom:1px dashed #ccc;
 	overflow:hidden;
 	margin-bottom:1em;
@@ -379,7 +380,15 @@ a.merch span{
 .uparrow.closed:before{
 	@include rotate(90deg);
 }
-
+a.maps{
+	padding-left:14px;
+	background: transparent url('/img/mapmarker.png') no-repeat 0 50%;
+	background-size: 8px 12px;
+	color: #333;
+	&:hover{
+		color: $linkcolor;
+	}
+}
 
 .eventextra{
 	@include rotateX(0);

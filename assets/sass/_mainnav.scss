@@ -51,6 +51,7 @@ header#mainnav.fixed{
 		display:inline-block;
 		position:relative;
 		z-index:5;
+		-webkit-backface-visibility: hidden;
 		&:hover{
 			background-position:100% 0;
 		}
@@ -102,7 +103,9 @@ header#mainnav.fixed{
 	padding:16px;
 	a{color:#fff; text-transform: uppercase;
 		&:hover{
-			color: $linkcolor;
+			color: #fff;
+			/*text-decoration:underline;*/
+			border-bottom: 2px solid #fff;
 		}
 	}
 }
