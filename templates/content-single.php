@@ -31,6 +31,6 @@
     <div class="navitems">
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
     </div>
-    <?php comments_template('/templates/comments.php'); ?>
+    <?php // comments_template('/templates/comments.php'); ?>
   </article>
 <?php endwhile; ?>

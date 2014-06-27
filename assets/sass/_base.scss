@@ -115,15 +115,24 @@ a.back{
 	@include font-size(2.2);
 	padding:13px 18px;
 	-webkit-font-smoothing:antialiased;
-
 }
 header .btn.buy{
 	@include font-size(2.8);
-	display:none;
+	/*display:none;*/
 	position:absolute;
 	right:30px;
 	top:30px;
 }
+.mobile.buy.btn{
+	position:absolute;
+	top:48px;
+	width:100%;
+	z-index:100;
+	left:0;
+	text-align:center;
+
+}
+
 .btn:hover, .button:hover{
 	background-color: #f7a045;
 }

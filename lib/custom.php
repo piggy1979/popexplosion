@@ -359,6 +359,31 @@ function siteLoop($id, $n = null){
 	return $output;
 }
 
+function connectedItems($n, $show=true){
+	$connected = new WP_Query( array(
+        'connected_type'  => 'posts_to_pages',
+    	'connected_items'	=> $n,
+        'nopaging'        => true
+      ));
+
+	$output = "";
+
+      if($connected->have_posts()){
+        $output .= "<h2>Current Shows</h2>\n";
+        foreach($connected->posts as $post){
+        	
+        	if($show){
+        		$time = get_post_meta($post->ID, 'marcato_show_start_time_unix')[0];
+        		$formattedtime = date("F jS, g:i A", $time);
+			}
+        	$output .= "<p class='artistlink'><a href='".get_permalink($post->ID)."'>" . $post->post_title . "</a>";
+			if($show) $output .= " &bull; " . $formattedtime . "</p>\n";
+        }
+      }
+      return $output;
+}
+
+
 function URLinArray($url, $array){
 	if($url == null) return false;
 	foreach($array as $value){
@@ -377,7 +402,7 @@ function shoppingCart(){
 	$cart_contents_count = $woocommerce->cart->cart_contents_count;
 
 	if($cart_contents_count >0){
-		return "<span>Cart" . "<strong>" . $cart_contents_count . "</strong></span>\n";
+		return "<span>Cart" . "<strong><a href='/cart'>" . $cart_contents_count . "</a></strong></span>\n";
 	}else{
 		return false;
 	}

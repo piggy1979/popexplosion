@@ -9,6 +9,9 @@
 header#mainnav.fixed{
 	z-index:301;
 }
+header#mainnav.fixed .logo{
+	display:none;
+}
 .fixed #menu-primary-navigation{
 	position:fixed;
 	top:0px;
@@ -109,6 +112,23 @@ header#mainnav.fixed{
 		}
 	}
 }
+
+#menu-secondary-nav ul.dropdown-menu{
+	position:absolute;
+	background-color:#fff;
+	
+}
+#menu-secondary-nav ul.dropdown-menu li{
+	display:block;
+	float:none;
+}
+#menu-secondary-nav ul.dropdown-menu li a{
+	color: #333;
+	&:hover{
+		color: $linkcolor;
+	}
+}
+
 /*
 #menu-primary-navigation .menu-lineup:after, #menu-primary-navigation .menu-schedule:after{
 	content:"/";

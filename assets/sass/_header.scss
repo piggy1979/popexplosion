@@ -66,6 +66,8 @@ header#mainnav img{
 	color:$linkcolor;
 	background-color: $darkbuttonhover;
 }
+.sites span em{display:none;}
+
 .sites li{
 	text-transform: uppercase;
 	float:left;
@@ -131,7 +133,7 @@ li.searchbtn a:focus{
 }
 li.shopcart{
 	position:absolute;
-	right: 80px;
+	right: 60px;
 }
 li.shopcart span{
 	color:#999;
@@ -145,6 +147,15 @@ li.shopcart strong{
 	margin-left:6px;
 	@include font-size(1.1);
 	vertical-align:top;
+}
+li.shopcart a{
+	display:inline;
+	color:#fff;
+	padding:0;
+	&:hover{
+		background-color:transparent;
+		color:#fff;
+	}
 }
 li.shopcart span{
 	background: url(../img/cart.svg) no-repeat 0 50%;

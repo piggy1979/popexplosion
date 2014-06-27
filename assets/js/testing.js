@@ -88,7 +88,7 @@ function resizeFunction(){
 
 function scrollFunction(){
 	var height = $(window).scrollTop();
-	if(height >= 250){
+	if(height >= 200){
 	$("#mainnav").addClass('fixed');
 	}else{
 	$("#mainnav").removeClass("fixed");

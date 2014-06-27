@@ -57,6 +57,7 @@ $("#searchform input").on('blur', function(){
         endif;
       ?>
     </nav>
+    <a href="#" class='mobile buy btn'>Buy Tickets</a>
 
 </header>
 <div id="mobilecontainer">
@@ -69,7 +70,7 @@ $("#searchform input").on('blur', function(){
       <ul>
         <li><a href="http://hpxdigital.com">HPX Digital</a></li>
         <li><a class="active" href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
-        <li><span class="date">October 23-25, 2014 &bull; Halifax,NS</span></li>
+        <li><span class="date">October 23-25, 2014 <em>&bull; Halifax, NS</em></span></li>
         <li class="shopcart"><?php echo shoppingCart(); ?></li>
         <li class="searchbtn"><a href="/search">Search</a></li>
       </ul>
@@ -99,7 +100,11 @@ $("#searchform input").on('blur', function(){
         endif;
         
         if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(array('theme_location' => 'secondary_nav', 'menu_class' => 'secnav navbar-nav'));
+          wp_nav_menu(
+            array(
+              'theme_location' => 'secondary_nav', 
+              'menu_class' => 'secnav navbar-nav'
+            ));
         endif;
       ?>
     </nav>

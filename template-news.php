@@ -4,11 +4,13 @@ Template Name: News Template
 */
 ?>
 
-
+<?php /*
 <div id="main-content" class="main-content">
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content container" role="main">
+		<div id="content" class="site-content" role="main">
+
+*/ ?>
 		<h1>News</h1>
 <?php
 	
@@ -21,10 +23,11 @@ Template Name: News Template
 			echo get_next_posts_link('TEST Go to next page'); 
 	}
 ?>
-		</div><!-- #content -->
+	<?php /*	</div><!-- #content -->
 	</div><!-- #primary -->
+	
 </div><!-- #main-content -->
-
+*/ ?>
 <?php
 
 
