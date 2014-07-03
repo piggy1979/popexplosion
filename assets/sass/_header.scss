@@ -74,7 +74,7 @@ header#mainnav img{
 }
 .sites li.searchbtn{display:block;}
 .maincontainer{
-	padding-top: 38px;
+	padding-top: 76px;
 	padding-bottom: 76px;
 }
 li.searchbtn{
@@ -100,10 +100,10 @@ li.searchbtn a:focus{
 	outline:none;
 }
 #searchform{
-	padding:20px 60px;
+	padding:50px 60px;
 	background-color:$linkaltcolor;
 	overflow:hidden;
-	margin-top:-160px;
+	margin-top:-170px;
 	width:100%;
 	@include transition-duration(0.3s);
 	@include transition-property(all);
@@ -122,13 +122,13 @@ li.searchbtn a:focus{
 	display:inline-block;
 }
 #searchform label{
-	width:24%;
+	width:22%;
 	text-align:right;
 	padding-right:1%;
 }
 #searchform input[type="text"]{
 		border:0;
-		width:75%;
+		width:78%;
 		background-color:$linkaltcolor;
 }
 li.shopcart{

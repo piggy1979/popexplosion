@@ -68,11 +68,6 @@
 
 })(window, jQuery);
 
-
-
-
-
-
 function resizeFunction(){
 	var bannerHeight = $('header.banner').height();
 	var windowHeight = $(window).height();
@@ -257,27 +252,23 @@ function collapseSystem(){
 		}
 	});
 	var allitems = $(".uparrow, .eventextra");
-	$("#collapseall").on('click', function(evt){
+	$("#collapseall").on('click touchstart', function(evt){
 		evt.preventDefault();
 		allitems.addClass('closed');
 	});
-	$("#extendall").on('click', function(evt){
+	$("#extendall").on('click touchstart', function(evt){
 		evt.preventDefault();
 		allitems.removeClass('closed');
 	});
 
-
 }
-
-
-
 
 function setupSchedule(){
 
 	buttonFilter.init();
 	collapseSystem();
 
-  $('#mixincontainer').mixItUp({
+	$('#mixincontainer').mixItUp({
     controls: {
 		enable : false
     },
@@ -294,11 +285,17 @@ function setupSchedule(){
 
 function searchBtn(){
 	$btn = $("li.searchbtn a");
+	$form = $("#searchform");
 
-	$btn.on('click touch', function(evt){
+
+
+	$btn.add($form).on('click touchstart',function(evt){
+		evt.stopPropagation();
+	});
+	$btn.on('click touchstart', function(evt){
 		evt.preventDefault();
 		$this = $(this);
-		$form = $("#searchform");
+		
 		$this.toggleClass('active');
 		$form.toggleClass('active');
 		$form.find("input").focus();
@@ -306,6 +303,68 @@ function searchBtn(){
 		if($form.hasClass("active")){
 			$form.find("input").blur();
 		}
+
+
+		$(document).on('click touchstart',function(evt){
+			$form.removeClass('active');		
+		});
+
+
+	});
+}
+
+function dropdownMenu(){
+
+	var mouse_pos = false;
+
+	$menus = $("ul.dropdown-menu");
+
+	$(document).on('click touchstart',function(evt){
+		$menus.removeClass('active');
+		//evt.preventPropagation();	
+	});
+
+	// get all instances of the drop downs.
+	$menus.each(function(key, val){
+		$this = $(this);
+		$parent = $this.parent('li');
+
+
+		var px = $parent.offset().top + 30;
+		var py = $parent.offset().left;
+		var pw = py + 24;
+
+		$this.appendTo("body");
+		$this.css({
+			position: 'absolute',
+			display: 'block',
+			top : px + "px",
+			left : pw + "px"
+		});
+		$this.addClass("menu"+key);
+		$this.add($parent).on('click touchstart', function(evt){
+			evt.stopPropagation();
+		});
+
+		$parent.on('click touchstart', function(evt){
+			evt.preventDefault();
+			if($this.hasClass('active')) {
+				$this.removeClass('active');
+			}else{
+				$this.addClass('active');
+			}
+		});
+	});
+}
+
+function fullLinking(n){
+	var link = n.find('a');
+	link.on('click touchstart',function(evt){
+		evt.preventDefault();
+	});
+	var url = link.attr('href');
+	n.on('click touchend', function(){
+		location.href = url;
 	});
 }
 
@@ -314,6 +373,8 @@ function init(){
 	mobileNav();
 	searchBtn();
 	setupSchedule();
+	dropdownMenu();
+	fullLinking($('.news-cta'));
 }
 
 $(function(){

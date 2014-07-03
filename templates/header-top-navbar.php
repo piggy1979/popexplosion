@@ -81,10 +81,16 @@ $("#searchform input").on('blur', function(){
     </form>
 
 </header>
+<?php
 
+if( is_search() || is_404() ){
+  $post = new stdClass();
+  $post->post_name = "";
+}
+
+?>
 
 <?php if( wpmd_is_notphone() ) : ?>
-
 <?php if($post->post_name == "lineup"){
   echo "<div class='lineupbackground'>\n";
 }

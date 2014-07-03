@@ -23,12 +23,15 @@
 /* artists */
 .artistlink{
 			@include font-size(1.5);
-
+		margin-bottom:0.5em !important;
 	a{
-		font-weight:800;
+		font-weight:300;
 	/*	padding-right:30px; */
 	/*	background: url(../img/chain.svg) no-repeat right 50%; */
 	}
+}
+.type-marcato_artist h2{
+	margin-top:1.4em;
 }
 .similar a{
 	font-weight:800;
@@ -41,14 +44,21 @@
 .similar img{
 	display:block;
 }
-article.post{
+article.post, .search article{
 	padding-bottom:15px;
 	border-bottom:1px dashed #ccc;
 }
+
+.search .type-marcato_artist h2{
+	margin-top:1em;
+}
+.search article.marcato_artist div{
+	padding-bottom:0;
+}
+
 article.marcato_artist{
 	overflow:hidden;
 	padding-bottom:30px;
-	padding-top:30px;
 }
 article.marcato_artist div {padding-bottom:40px;}
 .related{
@@ -99,7 +109,7 @@ article.marcato_artist div {padding-bottom:40px;}
 	display:block;
 	content: '';
 	margin-top:12px;
-	@include transition-duration(1s);
+	@include transition-duration(0.3s);
 	@include transition-property(width);	
 }
 .sidebar:hover .widget_categories h3:after{
@@ -121,7 +131,14 @@ li.cat-item a.current{
 /* front page items */
 
 .news-cta{
-	position: relative;	
+	position: relative;
+	cursor: pointer;
+	border-bottom: 1px dashed #fff;
+	@include transition-duration(0.3s);
+	@include transition-property(border-color);
+	&:hover{
+		border-color: #eee;
+	}	
 }
 
 .news-cta img{

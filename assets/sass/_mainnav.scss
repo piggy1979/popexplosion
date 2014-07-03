@@ -9,9 +9,9 @@
 header#mainnav.fixed{
 	z-index:301;
 }
-header#mainnav.fixed .logo{
-	display:none;
-}
+//header#mainnav.fixed .logo{
+//	display:none;
+//}
 .fixed #menu-primary-navigation{
 	position:fixed;
 	top:0px;
@@ -113,22 +113,47 @@ header#mainnav.fixed .logo{
 	}
 }
 
-#menu-secondary-nav ul.dropdown-menu{
+ul.dropdown-menu{
 	position:absolute;
-	background-color:#fff;
-	
+	background-color:#000;
+	display:none;
+	margin-top:6px;
+	margin-left:-8px;
+	padding:0px;
+	overflow:hidden;
+	max-height:0px;
+	@include transition-duration(0.4s);
+	@include transition-property(all);
+	z-index:100;
 }
-#menu-secondary-nav ul.dropdown-menu li{
+ul.dropdown-menu li{
 	display:block;
 	float:none;
+	text-align:left;
 }
-#menu-secondary-nav ul.dropdown-menu li a{
-	color: #333;
+ul.dropdown-menu li a{
+	color: #fff;
+	font-weight: 300;
+	padding: 10px 25px;
+	display:block;
+	@include transition-duration(0.2s);
+	@include transition-property(all);
 	&:hover{
 		color: $linkcolor;
+		background-color:#000;
 	}
 }
-
+li a:focus{	
+	outline:none;
+}
+ul.dropdown-menu.active{
+	max-height:400px;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.caret{
+	content: '&#9662;';
+}
 /*
 #menu-primary-navigation .menu-lineup:after, #menu-primary-navigation .menu-schedule:after{
 	content:"/";
