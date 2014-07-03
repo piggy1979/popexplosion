@@ -30,7 +30,7 @@
 #lineuplist li.act{
 	@include font-size(3);
 }
-#menu-primary-navigation li a{
+#menu-primary-navigation li a, #stickymenu li a{
 	@include font-size(2);
 }
 .sites span em{display:inline;}

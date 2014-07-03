@@ -82,11 +82,12 @@ function resizeFunction(){
 }
 
 function scrollFunction(){
+
 	var height = $(window).scrollTop();
 	if(height >= 200){
-	$("#mainnav").addClass('fixed');
+	$stickymenu.addClass('fixed');
 	}else{
-	$("#mainnav").removeClass("fixed");
+	$stickymenu.removeClass("fixed");
 	}
 }
 
@@ -304,11 +305,9 @@ function searchBtn(){
 			$form.find("input").blur();
 		}
 
-
 		$(document).on('click touchstart',function(evt){
 			$form.removeClass('active');		
 		});
-
 
 	});
 }
@@ -329,7 +328,6 @@ function dropdownMenu(){
 		$this = $(this);
 		$parent = $this.parent('li');
 
-
 		var px = $parent.offset().top + 30;
 		var py = $parent.offset().left;
 		var pw = py + 24;
@@ -348,10 +346,12 @@ function dropdownMenu(){
 
 		$parent.on('click touchstart', function(evt){
 			evt.preventDefault();
-			if($this.hasClass('active')) {
-				$this.removeClass('active');
+			$menus.removeClass("active");
+			var item = $(".menu"+key);
+			if(item.hasClass('active')) {
+				item.removeClass('active');
 			}else{
-				$this.addClass('active');
+				item.addClass('active');
 			}
 		});
 	});
@@ -369,6 +369,10 @@ function fullLinking(n){
 }
 
 function init(){
+	// base jquery mod prep
+	$("#menu-primary-navigation").clone().attr('id', 'stickymenu').appendTo('body');
+	$stickymenu = $("#stickymenu");
+
 	resizeFunction();
 	mobileNav();
 	searchBtn();
@@ -378,6 +382,7 @@ function init(){
 }
 
 $(function(){
+
 	init();
 	
 	$(".flexslider").flexslider({

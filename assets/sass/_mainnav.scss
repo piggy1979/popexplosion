@@ -12,7 +12,7 @@ header#mainnav.fixed{
 //header#mainnav.fixed .logo{
 //	display:none;
 //}
-.fixed #menu-primary-navigation{
+#stickymenu.fixed {
 	position:fixed;
 	top:0px;
 	z-index: 301;
@@ -37,10 +37,10 @@ header#mainnav.fixed{
 	from {top:-25px;opacity:0;}
 	to {top:0px;opacity:1;}
 }
-#menu-primary-navigation li a{
+#menu-primary-navigation li a, #stickymenu li a{
 	@include font-size(1.5);
 }
-#menu-primary-navigation li, footer .widget_text h3{
+#menu-primary-navigation li, footer .widget_text h3, #stickymenu li{
 	float:left;
 	font-family: $headerfont;
 	@include font-size(2.5);
@@ -60,11 +60,11 @@ header#mainnav.fixed{
 		}
 	}
 }
-#menu-primary-navigation li{
+#menu-primary-navigation li, #stickymenu li{
 	padding: 16px 5px 10px 3px;
 	position:relative;
 }
-#menu-primary-navigation li a:before, #menu-primary-navigation li.active a:before{
+#menu-primary-navigation li a:before, #menu-primary-navigation li.active a:before, #stickymenu li a:before, #stickymenu li.active a:before{
 	content:'';
 	height:31px;
 	width:0%;
@@ -76,7 +76,7 @@ header#mainnav.fixed{
 	@include transition-duration(0.5s);
 	@include transition-property(width);
 }
-#menu-primary-navigation li a:after, #menu-primary-navigation li.active a:after{
+#menu-primary-navigation li a:after, #stickymenu li a:after, #menu-primary-navigation li.active a:after, #stickymenu li.active a:after{
 	content:'';
 	height:2px;
 	bottom:2px;
@@ -93,9 +93,12 @@ header#mainnav.fixed{
 	box-sizing: content-box;
 }
 #menu-primary-navigation li a:hover:before,
-#menu-primary-navigation li.active a:before
+#stickymenu li a:hover:before,
+#menu-primary-navigation li.active a:before,
+#stickymenu li.active a:before
 {width:100%;}
-#menu-primary-navigation li a:hover:after, #menu-primary-navigation li.active a:after
+#menu-primary-navigation li a:hover:after, #menu-primary-navigation li.active a:after,
+#stickymenu li a:hover:after, #stickymenu li.active a:after
 {right:6px;}
 #menu-secondary-nav{clear:left; margin-left:7px; margin-top:-20px;overflow:hidden;}
 #menu-secondary-nav li{

@@ -4,15 +4,11 @@ echo getNews(2);
 ?>
 </div>
 
-<div class="col-md-4 hide">
-<span>Advertisement</span>
+<div class="advert col-md-4 hide">
 <?php
-// echo getAds();
+ echo getAds();
 ?>
-<a class="merch" href="<?php echo site_url(); ?>/shop/">
-<img src="/img/iheart.jpg" title="Shop Merch">
-<span>Shop Merch</span>
-</a>
+
 </div>
 
 

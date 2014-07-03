@@ -16,11 +16,11 @@ Template Name: Schedule Template
 
 	<ul id="date-filter">
 		<li><span class="month">October</span></li>
-		<li><span class="btn fdate21 filter active" data-filter=".date21">21</span></li>
-		<li><span class="btn fdate22 filter" data-filter=".date22">22</span></li>
-		<li><span class="btn fdate23 filter" data-filter=".date23">23</span></li>
-		<li><span class="btn fdate24 filter" data-filter=".date24">24</span></li>
-		<li><span class="btn fdate25 filter" data-filter=".date25">25</span></li>
+		<li><span class="fdate21 filter active" data-filter=".date21">21</span></li>
+		<li><span class="fdate22 filter" data-filter=".date22">22</span></li>
+		<li><span class="fdate23 filter" data-filter=".date23">23</span></li>
+		<li><span class="fdate24 filter" data-filter=".date24">24</span></li>
+		<li><span class="fdate25 filter" data-filter=".date25">25</span></li>
 	</ul>
 
 	<form>

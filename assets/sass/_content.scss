@@ -160,27 +160,17 @@ li.cat-item a.current{
 	color: $linkcolor;
 }
 .advert{
-
 	text-align:center;
 	@include font-size(0.9);
-	float:left;
-	width:300px;
-	margin-left: 19px;
 	text-transform:uppercase;
 }
-.advert span{
-	background-color: #efefef;
-	display:block;
-	text-align: center;
-	padding: 5px 0;
-	letter-spacing: 0.05em;
-}
+
 .advert img{
 	display:block;	
 }
 a.merch{
 	display:block;
-	margin-top: 40px;
+	margin-bottom: 40px;
 	&:hover{text-decoration:none;}
 }
 
