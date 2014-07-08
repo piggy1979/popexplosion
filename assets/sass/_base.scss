@@ -68,13 +68,14 @@ article li, main li{
 	margin-left: 1em;
 }
 a{
+
 	text-decoration:none;
 }
 a:hover, a:focus{
 	color: $linkaltcolor;
 	text-decoration: none;
 }
-article a{
+article a, section a{
 	color: $linkcolor;
 }
 h5{
@@ -190,4 +191,17 @@ span.tag{
 	background-color:$linkaltcolor;
 	padding:4px;
 	text-transform:uppercase;
+}
+.advertlink img{
+	width:100%;
+	max-width:300px;
+}
+.morenews{
+	color:$linkcolor;
+	clear:both;
+	margin-top:70px;
+	padding: 30px 0;
+	text-align:center;
+	background-color: #f7f7f7;
+
 }

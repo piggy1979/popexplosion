@@ -33,6 +33,11 @@ Template Name: Schedule Template
 
 <div id="mixincontainer">
 
+
+
+
+
+<?php /*
 		<section class="mix music date21">
 
 			<div class="eventdescription">
@@ -168,10 +173,13 @@ Template Name: Schedule Template
 
 			</div>
 		</section>
-
+*/ ?>
 
 
 <?php
+
+echo fetchShows();
+
 /* this is where the shows will go when i have that data */	
 ?>
 		

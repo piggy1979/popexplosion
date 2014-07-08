@@ -152,7 +152,7 @@ function getNews($n, $paged=null, $list = null){
 			$imageID = get_post_thumbnail_id($post->ID);
 			$image = wp_get_attachment_image_src($imageID, 'newsitem');
 	
-			$output .= "<section class='news-cta col-sm-6'>\n";
+			$output .= "<section class='news-cta col-sm-4'>\n";
 			$output .= "<time class=\"published\" datetime=\"" . processDate($post->post_date, 'c') . "\">" . processDate($post->post_date, 'M') . "<br>" . processDate($post->post_date, 'd') . "</time>\n";
 			$output .= "<img src=\"".$image[0]."\">\n";
 			$output .= "<h2><a href='".get_permalink($post->ID)."'>". $post->post_title . "</a></h2>\n";
@@ -183,7 +183,7 @@ function getAds($n = null){
 	foreach($query->posts as $post){
 		$imageID = get_post_thumbnail_id($post->ID);
 		$image = wp_get_attachment_image_src($imageID, 'ads');
-		$output .= "<a href='". get_field('url', $post->ID ) ."'>\n";
+		$output .= "<a class='advertlink' href='". get_field('url', $post->ID ) ."'>\n";
 		$output .= "<img src=\"".$image[0]."\">\n";
 		$output .= "</a>\n";
 	}
@@ -262,6 +262,95 @@ function fetchLineup(){
 
 }
 
+function fetchShows(){
+
+	$args = array(
+		'post_type'			=> 'marcato_show',
+		'posts_per_page'	=> -1,
+		'orderby'			=> 'meta_value_num',
+		'meta_key'			=> 'marcato_show_start_time_unix'
+	);
+
+	$query = new WP_Query($args);
+
+	$output = "";
+
+	// build opening of the section.
+	foreach($query->posts as $post){
+		$type = getCat($post->ID);
+		$date = "date" . date( 'd', get_post_meta($post->ID, 'marcato_show_start_time_unix')[0] );
+		$output .= "<section class=\"mix " . $type . " " . $date . "\">\n";
+		$output .= "<div class='eventdescription'>\n";
+		$output .= "<h3>" . $post->post_title . "</h3>\n";
+		$output .= "<strong>" . get_post_meta($post->ID, 'marcato_show_price')[0] . "</strong>\n";
+		$output .= "<div class='eventextra'>\n";
+
+		$output .= getTimes($post->ID);
+
+		$output .= "<div class='articlesocial'>\n";
+
+		if($type) $output .= "<span class='tag'>" . $type . "</span>\n";
+
+		$shareurl = site_url() . "/shows/" . $post->post_name; 
+		$output .= "<ul class=\"rrssb-buttons\">\n";
+		$output .= "<li class='facebook'>" . "<a href=\"https://www.facebook.com/sharer/sharer.php?u=" . $shareurl ."\">Facebook</a></li>\n";
+		$output .= "</ul>\n";
+		$output .= "</div><!-- end of article social -->\n";
+		$output .= "</div><!-- end of event extra -->\n";
+		$output .= "</div><!-- end of event description -->\n";
+
+		// event details 
+
+		$output .= "<div class=\"eventdetails\">\n";
+		$output .= "<div class=\"eventtime\">\n";
+		$output .= "<strong>".date( 'l, F n', get_post_meta($post->ID, 'marcato_show_start_time_unix')[0] )."</strong>\n";
+		$output .= "</div>\n";
+
+		$output .= "<div class=\"directions\">";
+		$output .= "<strong>" . get_post_meta($post->ID, 'marcato_show_venue_name')[0] . "</strong><br>\n";
+
+		$googlemaps = rawurlencode(get_post_meta($post->ID, 'marcato_show_venue_name')[0] . ",Halifax NS");
+
+		$output .= "<a class='maps fancybox.iframe' href=\"https://www.google.com/maps/embed/v1/place?key=AIzaSyApi6sfP5n-DEVKtPHJt8Lfbc4R1_r4Z8U&q=".$googlemaps."\">Directions</a>\n";
+		$output .= "</div>\n";
+
+		$output .= "</div><!-- end of event details -->\n";
+
+		$output .= "</section>\n";
+	}
+	return $output;
+}
+
+function getTimes($n){
+	$connected = new WP_Query( array(
+        'connected_type'  	=> 'posts_to_pages',
+    	'connected_items'	=> $n,
+        'nopaging'        	=> true
+      ));
+
+	$output = "";
+
+      if($connected->have_posts()){
+        foreach($connected->posts as $post){
+        //	print_r( get_post_meta($post->ID, 'marcato_show_start_time_unix')[0] );
+        	$output .= "<p>" . $post->post_title . "</p>";
+		}
+	}
+	return $output;
+}
+
+function getCat($id){
+	$cats = get_the_category($id);
+	$total = "";
+	//print_r($cats);
+	foreach($cats as $cat){
+		$total .= $cat->name . " ";
+	}
+	return trim($total);
+
+}
+
+//marcato_show_start_time_unix
 
 function getSimilar($id){
 	// grab similar categories inside the genre category group.

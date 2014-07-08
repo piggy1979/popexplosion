@@ -21,6 +21,7 @@ header#mainnav{
 }
 .lineup header#mainnav{background:none;}
 .lineupbackground, body.lineup #mobilecontainer{
+	background-color:$linkaltcolor;
 	@include background-image(linear-gradient($linkaltcolor , $linkcolor 40%));	
 }
 .home header#mainnav{

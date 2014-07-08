@@ -1,14 +1,11 @@
-<div class="row col-md-8">
+<div>
 <?php
 echo getNews(2);
+echo "<section class='news-cta col-sm-4'>\n";
+echo getAds();
+echo "</section>\n";
 ?>
-</div>
-
-<div class="advert col-md-4 hide">
-<?php
- echo getAds();
-?>
-
+<a href="/news/" class="morenews col-sm-8">View more news</a>
 </div>
 
 

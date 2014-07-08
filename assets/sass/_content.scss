@@ -163,10 +163,14 @@ li.cat-item a.current{
 	text-align:center;
 	@include font-size(0.9);
 	text-transform:uppercase;
+	max-width:300px;
+	overflow:hidden;
+	clear:both;
 }
 
 .advert img{
 	display:block;	
+
 }
 a.merch{
 	display:block;

@@ -84,7 +84,7 @@ function resizeFunction(){
 function scrollFunction(){
 
 	var height = $(window).scrollTop();
-	if(height >= 200){
+	if(height >= 100){
 	$stickymenu.addClass('fixed');
 	}else{
 	$stickymenu.removeClass("fixed");
@@ -316,7 +316,7 @@ function dropdownMenu(){
 
 	var mouse_pos = false;
 
-	$menus = $("ul.dropdown-menu");
+	$menus = $("#mainnav ul.dropdown-menu");
 
 	$(document).on('click touchstart',function(evt){
 		$menus.removeClass('active');
@@ -362,8 +362,10 @@ function fullLinking(n){
 	link.on('click touchstart',function(evt){
 		evt.preventDefault();
 	});
-	var url = link.attr('href');
+
 	n.on('click touchend', function(){
+		var newlink = $(this).find('a');
+		var url = newlink.attr('href');
 		location.href = url;
 	});
 }

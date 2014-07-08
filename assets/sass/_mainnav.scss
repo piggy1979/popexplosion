@@ -12,15 +12,24 @@ header#mainnav.fixed{
 //header#mainnav.fixed .logo{
 //	display:none;
 //}
-#stickymenu.fixed {
+
+#stickymenu{
 	position:fixed;
-	top:0px;
+	top:-50px;
+	opacity:0;
 	z-index: 301;
 	margin-top: -3px;
 	right: 170px;
-	-webkit-animation: moveMenu 0.6s;
-	-moz-animation: moveMenu 0.6s;
-	animation: moveMenu 0.6s;
+	@include transition-duration(0.6s);
+	@include transition-property(all);
+}
+
+#stickymenu.fixed {
+	top:0px;
+	opacity:1;
+//	-webkit-animation: moveMenu 0.6s;
+//	-moz-animation: moveMenu 0.6s;
+//	animation: moveMenu 0.6s;
 }
 
 /* animation here we goes */
@@ -37,6 +46,7 @@ header#mainnav.fixed{
 	from {top:-25px;opacity:0;}
 	to {top:0px;opacity:1;}
 }
+
 #menu-primary-navigation li a, #stickymenu li a{
 	@include font-size(1.5);
 }
