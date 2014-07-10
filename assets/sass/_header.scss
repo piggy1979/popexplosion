@@ -146,7 +146,6 @@ li.shopcart strong{
 	color: #fff;
 	padding:0 6px;
 	margin-left:6px;
-	@include font-size(1.1);
 	vertical-align:top;
 }
 li.shopcart a{
@@ -162,4 +161,10 @@ li.shopcart span{
 	background: url(../img/cart.svg) no-repeat 0 50%;
 	background-size: 15px 15px;
 	padding: 1.25em;
+}
+.woocommerce .cart-collaterals .shipping_calculator .shipping-calculator-button:after, .woocommerce-page .cart-collaterals .shipping_calculator .shipping-calculator-button:after {
+	display:none;
+}
+.banner .sites ul{
+	margin-left:-19px;
 }

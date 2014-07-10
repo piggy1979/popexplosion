@@ -85,7 +85,7 @@ h5{
 	font-family: $bodyfont;
 	margin-bottom:30px;
 }
-a.btn , input.button, a.back{
+a.btn , input.button, a.back, .main .search-submit{
 	font-family: $bodyfont;
 	font-size:1.4rem;
 	color:#fff;
@@ -203,5 +203,20 @@ span.tag{
 	padding: 30px 0;
 	text-align:center;
 	background-color: #f7f7f7;
-
+	@include transition-duration(0.2s);
+	@include transition-property(all);	
+	&:hover{
+		background-color:#000;
+		color:#fff;
+	}
+}
+.main .search-form{
+	margin-top:20px;	
+}
+.main .search-field{
+	border:1px solid #c7c7c7;
+	padding:9px;
+}
+.main .search-form label{
+	display:none;
 }

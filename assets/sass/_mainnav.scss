@@ -50,6 +50,10 @@ header#mainnav.fixed{
 #menu-primary-navigation li a, #stickymenu li a{
 	@include font-size(1.5);
 }
+#menu-primary-navigation li a{
+		@include font-size(1.8);
+
+}
 #menu-primary-navigation li, footer .widget_text h3, #stickymenu li{
 	float:left;
 	font-family: $headerfont;
@@ -74,6 +78,8 @@ header#mainnav.fixed{
 	padding: 16px 5px 10px 3px;
 	position:relative;
 }
+
+
 #menu-primary-navigation li a:before, #menu-primary-navigation li.active a:before, #stickymenu li a:before, #stickymenu li.active a:before{
 	content:'';
 	height:31px;
@@ -94,7 +100,7 @@ header#mainnav.fixed{
 	width:auto;
 	position: absolute;
 	left: 6px;
-	right: 120px;
+	right: 140px;
 	z-index:3;
 	@include transition-duration(0.4s);
 	@include transition-property(right);
@@ -130,14 +136,14 @@ ul.dropdown-menu{
 	position:absolute;
 	background-color:#000;
 	display:none;
-	margin-top:6px;
+	margin-top:4px;
 	margin-left:-8px;
 	padding:0px;
 	overflow:hidden;
 	max-height:0px;
 	@include transition-duration(0.4s);
 	@include transition-property(all);
-	z-index:100;
+	z-index:200;
 }
 ul.dropdown-menu li{
 	display:block;

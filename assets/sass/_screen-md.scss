@@ -33,7 +33,22 @@
 #menu-primary-navigation li a, #stickymenu li a{
 	@include font-size(2);
 }
+#menu-primary-navigation li a{
+	@include font-size(2.5);
+}
 .sites span em{display:inline;}
 .advert{clear:none;}
+#menu-primary-navigation li:after{
+	content: "/";
+	color:#fff;
+	display:inline-block;
+	font-family:arial, _sans;
+	margin-left:10px;
+	margin-right:5px;
+	font-weight:300;
+}
+#menu-primary-navigation li:last-child:after{
+	display:none;
+}
 //.home .maincontainer{width:992px;}
 }

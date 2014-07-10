@@ -277,7 +277,7 @@ function fetchShows(){
 
 	// build opening of the section.
 	foreach($query->posts as $post){
-		$type = getCat($post->ID);
+		$type = strtolower(getCat($post->ID));
 		$date = "date" . date( 'd', get_post_meta($post->ID, 'marcato_show_start_time_unix')[0] );
 		$output .= "<section class=\"mix " . $type . " " . $date . "\">\n";
 		$output .= "<div class='eventdescription'>\n";
@@ -293,6 +293,11 @@ function fetchShows(){
 
 		$shareurl = site_url() . "/shows/" . $post->post_name; 
 		$output .= "<ul class=\"rrssb-buttons\">\n";
+
+		$twithash = get_post_meta($post->ID, 'twitter_hash_tag')[0];
+		if($twithash) $output .= "<li class='twitter'><a target='_blank'href='http://twitter.com/hashtag/".$twithash."'>#" . $twithash . "</a></li>\n";
+
+		//$output .= ""
 		$output .= "<li class='facebook'>" . "<a href=\"https://www.facebook.com/sharer/sharer.php?u=" . $shareurl ."\">Facebook</a></li>\n";
 		$output .= "</ul>\n";
 		$output .= "</div><!-- end of article social -->\n";
@@ -333,7 +338,7 @@ function getTimes($n){
       if($connected->have_posts()){
         foreach($connected->posts as $post){
         //	print_r( get_post_meta($post->ID, 'marcato_show_start_time_unix')[0] );
-        	$output .= "<p>" . $post->post_title . "</p>";
+        	$output .= "<p><a href='".get_permalink($post->ID). "'>" . $post->post_title . "</a></p>";
 		}
 	}
 	return $output;

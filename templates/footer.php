@@ -57,7 +57,7 @@ $emailform->creategetresponseMiniForm();
     <ul>
 		<li><a href="http://halifaxpopexplosion.com">Halifax Pop Explosion</a></li>
 		<li class="hide">/</li>
-		<li><a href="http://hpxdigital.com">HPX Digital</a></li>
+		<li><a href="http://collidehalifax.com">Collide</a></li>
     </ul>
 	</section>
   </div>

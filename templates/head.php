@@ -18,6 +18,11 @@
   <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <?php wp_head(); ?>
+  <meta property="og:title" content="<?php the_title(); ?> Halifax Pop Explosion" />
+  <meta property="og:url" content="<?php echo get_permalink(); ?>" />
+  <meta property="og:image" content="http://collidehalifax.com/header-logo.png"/>
+  <link rel="apple-touch-icon-precomposed" href="/img/favicon.png">
+  <link rel="shortcut icon" href="/img/favicon.png">
   <!--[if lte IE 8]>
   <link href='/wp-content/themes/popexplosion/assets/css/ie.css' rel='stylesheet' type='text/css'>
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv-printshiv.min.js"></script>

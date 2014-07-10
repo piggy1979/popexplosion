@@ -68,7 +68,7 @@ $("#searchform input").on('blur', function(){
 <header class="banner" role="banner">
     <div class="col-lg-12 sites">   
       <ul>
-        <li><a href="http://hpxdigital.com">HPX Digital</a></li>
+        <li><a href="http://collidehalifax.com">Collide</a></li>
         <li><a class="active" href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
         <li><span class="date">October 23-25, 2014 <em>&bull; Halifax, NS</em></span></li>
         <li class="shopcart"><?php echo shoppingCart(); ?></li>
