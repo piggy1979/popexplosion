@@ -109,11 +109,7 @@ article.marcato_artist div {padding-bottom:40px;}
 	display:block;
 	content: '';
 	margin-top:12px;
-	@include transition-duration(0.3s);
-	@include transition-property(width);	
-}
-.sidebar:hover .widget_categories h3:after{
-	width:100%;
+
 }
 li.cat-item, ul.product_list_widget li{
 	margin: 0.5em 0;
@@ -323,7 +319,7 @@ a.merch span{
 	clear:both;
 	overflow:hidden;
 	border-bottom: 1px dashed #ccc;
-	padding:60px 40px;
+	padding:60px 40px 20px;;
 		@include font-size(1.3);
 		line-height:21px;
 	h3{
@@ -337,6 +333,9 @@ a.merch span{
 		strong{
 			color:#999;
 			font-weight:600;
+			@include font-size(2);
+			margin-top:5px;
+			display:block;
 		}
 		p{
 			margin:30px 0;
@@ -367,6 +366,11 @@ a.merch span{
 	height:30px;
 	cursor:pointer;
 	background-color:#ccc;
+	@include transition-duration(0.6s);
+	@include transition-property(all);
+	&:hover{
+		background-color: #ddd;
+	}
 	
 }
 .uparrow:before{
@@ -378,9 +382,8 @@ a.merch span{
 	top:50%;
 	margin-left:-6px;
 	margin-top:-6px;
-	background: #ccc url(../img/arrow-grey.svg) no-repeat 50% 50%;
+	background: url(../img/arrow-grey.svg) no-repeat 50% 50%;
 	background-size: 11px 11px;
-
 	@include rotate(270deg);
 	@include transition-duration(0.6s);
 	@include transition-property(all);
@@ -478,15 +481,19 @@ span.fdate25{background-color:#ffcc33;}
 	margin-top:15px;
 	margin-right:10px;
 	position:relative;
+	background-color:#e7e7e7;
+	@include transition-duration(0.5s);
+	@include transition-property(all);
+	&:hover{
+		background-color:#000;
+		color:#fff;
+	}
 }
-#extendall{
+#extendall.active, #collapseall.active{
 	background-color: #000;
 	color:#fff;
 }
-#collapseall{
-	color: #666;
-	background-color:#e7e7e7;
-}
+
 #extendall:after, #collapseall:after{
 	content:'';
 	width:11px;
@@ -500,9 +507,17 @@ span.fdate25{background-color:#ffcc33;}
 	@include rotate(270deg);
 
 }
+
 #extendall:after{
+	background: url(../img/arrow-grey.svg) no-repeat 50% 50%;
+	@include rotate(90deg);
+}
+#extendall.active:after{
 	background: url(../img/arrow-white.svg) no-repeat 50% 50%;
 	@include rotate(90deg);
+}
+#collapseall.active:after{
+	background: url(../img/arrow-white.svg) no-repeat 50% 50%;
 }
 
 #collapseall:before, #extendall:before{
@@ -516,7 +531,7 @@ span.fdate25{background-color:#ffcc33;}
 	top:50%;
 	margin-top:-1px;
 }
-#extendall:before{
+#extendall.active:before, #collapseall.active:before{
 	background-color:#fff;
 }
 form span.required{
@@ -587,4 +602,20 @@ border-radius: 0;
 	right: -15px !important;
 	background: url('/img/closebtn.jpg') no-repeat !important;
 	background-size: 30px 30px !important;
+}
+.pdf{
+	display:inline-block;
+	text-align:right;
+	padding-left: 30px;
+	background: url('/img/adobe.png') no-repeat 0 50%;
+	background-size: 22px 20px;
+	line-height:30px
+}
+.pdf a{
+	color:#000;
+	@include font-size(1.3);
+	border-bottom: 1px dotted #000;
+	&:hover{
+		color: $linkcolor;
+	}
 }

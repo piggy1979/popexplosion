@@ -46,7 +46,7 @@ header#mainnav img{
 }
 .sites a, .sites span{
 	color: #999;
-	padding:1.25em 1.65em;
+	padding:0.95em 1.65em;
 	display:block;
 	@include font-size(1.5);
 }
@@ -84,7 +84,6 @@ li.searchbtn{
 	text-indent:-1000em;
 }
 li.searchbtn a{
-	padding:19px 29px;
 	background: #292929 url('/img/search.svg') no-repeat 50% 50%;
 	background-size: 17px 17px;
 	@include transition-duration(0.3s);

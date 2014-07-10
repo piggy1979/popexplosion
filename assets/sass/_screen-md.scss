@@ -19,7 +19,7 @@
 #filters form{
 	position:absolute;
 	bottom: 25px;
-	right:0;
+	right:-9px;
 }
 #lineupsel h2{
 	@include font-size(6);
@@ -49,6 +49,11 @@
 }
 #menu-primary-navigation li:last-child:after{
 	display:none;
+}
+div.pdf{
+	position:absolute;
+	right:0;
+	top:20px;
 }
 //.home .maincontainer{width:992px;}
 }

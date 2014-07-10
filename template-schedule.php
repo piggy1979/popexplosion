@@ -23,8 +23,12 @@ Template Name: Schedule Template
 		<li><span class="fdate25 filter" data-filter=".date25">25</span></li>
 	</ul>
 
+		<div class='pdf'><a href="/img/schedule.pdf">PDF Download / Full Schdule</a></div>
+
 	<form>
-		<button id="extendall">Extended Schedule</button>
+
+
+		<button id="extendall" class="active">Extended Schedule</button>
 		<button id="collapseall">Compressed Schedule</button>
 	</form>
 

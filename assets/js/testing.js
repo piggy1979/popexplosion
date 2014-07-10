@@ -256,10 +256,15 @@ function collapseSystem(){
 	$("#collapseall").on('click touchstart', function(evt){
 		evt.preventDefault();
 		allitems.addClass('closed');
+		$("#extendall").removeClass('active');
+		$(this).addClass('active');
 	});
 	$("#extendall").on('click touchstart', function(evt){
 		evt.preventDefault();
 		allitems.removeClass('closed');
+		$("#collapseall").removeClass('active');
+		$(this).addClass('active');
+
 	});
 
 }
@@ -299,14 +304,16 @@ function searchBtn(){
 		
 		$this.toggleClass('active');
 		$form.toggleClass('active');
+		console.log($form.find("input"));
 		$form.find("input").focus();
 		// check for modernizr touch
 		if($form.hasClass("active")){
-			$form.find("input").blur();
+			//$form.find("input").blur();
 		}
 
 		$(document).on('click touchstart',function(evt){
-			$form.removeClass('active');		
+			$form.removeClass('active');	
+			$this.removeClass('active');	
 		});
 
 	});
@@ -346,8 +353,8 @@ function dropdownMenu(){
 
 		$parent.on('click touchstart', function(evt){
 			evt.preventDefault();
-			$menus.removeClass("active");
 			var item = $(".menu"+key);
+			$menus.not(item).removeClass("active");
 			if(item.hasClass('active')) {
 				item.removeClass('active');
 			}else{
