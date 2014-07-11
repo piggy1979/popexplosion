@@ -51,6 +51,20 @@ register_post_type('advertisement',
 	)
 );
 
+register_post_type('featured',
+	array(
+		'labels'	=> array(
+			'name' 			=> __('Featured Slides'),
+			'singular_name'	=> __('Featured Slide')
+			),
+		'public'		=> true,
+		'has_archive'	=> false,
+		'menu_position'	=> 5,
+		'publicly_queryable' => true,
+		'supports' => array('title', 'thumbnail', 'revisions')
+	)
+);
+
 
 }
 
@@ -190,16 +204,11 @@ function getAds($n = null){
 	return $output;
 }
 
+
+
 function featuredSlides($n){
 	$args = array(
-		'post_type'			=> 'marcato_artist',
-		'meta_query'		=> array(
-			array(
-				'key'		=> 'featured',
-				'value'		=> 'featured',
-				'compare'	=> 'LIKE'
-			)
-		),
+		'post_type'			=> 'featured',
 		'posts_per_page'	=> $n
 	);
 
@@ -214,7 +223,9 @@ function featuredSlides($n){
 		$output .= "<div class='slide' ".$background.">\n";
 		$output .= "<div class='slidecontent'><div class='addpadding'>\n";
 		$output .= "<h2>".$post->post_title."</h2>\n";
-		$output .= "<a href='". get_permalink($post->ID) ."' class='profile'>See Profile</a>\n";
+		if(get_post_meta($post->ID, 'url')[0] && get_post_meta($post->ID, 'link_title')[0] ){
+		$output .= "<a href='". get_post_meta($post->ID, 'url')[0] ."' class='btn bko'>". get_post_meta($post->ID, 'link_title')[0] ."</a>\n";
+		}
 		$output .= "</div></div>\n";
 		$output .= "</div>\n";
 	}

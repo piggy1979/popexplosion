@@ -70,7 +70,7 @@ $("#searchform input").on('blur', function(){
       <ul>
         <li><a href="http://collidehalifax.com">Collide</a></li>
         <li><a class="active" href="http://halifaxpopexplosion.com">Pop Explosion</a></li>
-        <li><span class="date">October 23-25, 2014 <em>&bull; Halifax, NS</em></span></li>
+        <li><span class="date">October 21-25, 2014 <em>&bull; Halifax, NS</em></span></li>
         <li class="shopcart"><?php echo shoppingCart(); ?></li>
         <li class="searchbtn"><a href="/search">Search</a></li>
       </ul>
