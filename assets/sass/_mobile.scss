@@ -33,6 +33,9 @@ padding-top: 94px;
 	z-index:400;
 	width:100%;
 	background-color:#000;
+	.carot{
+		display:none;
+	}
 }
 #mainnavmobile h1{
 	@include font-size(1.7);
@@ -73,12 +76,40 @@ padding-top: 94px;
 //	margin-left: -19px;
 //	margin-right: -19px;
 }
-.schedule #mobilecontainer #mixincontainer{
-	margin-left: -19px;
-	margin-right: -19px;
+.schedule #mobilecontainer #mixincontainer .mix{
+	padding:19px;
+}
+#mobilecontainer section.mix {margin-bottom:20px;margin-top:20px;}
+#mobilecontainer .mix .articlesocial{
+display:none;
+}
+#mobilecontainer .mix .eventdescription p{
+	margin: 20px 0 10px;
 }
 .uparrow{right:38px;}
 #mobilecontainer header.banner{
 	display:none;
 }
-#mobilecontainer section{margin-bottom:50px;}
+#mobilecontainer section{ margin-bottom:50px;}
+#mobilecontainer .morenews{width:100%; display:block;}
+#mobilecontainer #date-filter{
+	height:auto;
+	strong{
+		padding:0;
+	}
+	span{
+		height:45px;
+		padding:10px;
+	}
+}
+#mobilecontainer #date-filter li:first-child{
+	display:block;
+	width:100%;
+	float:none;
+	text-align:center;
+	span.month{
+		@include font-size(2);
+		display:block;
+		padding:10px;
+	}
+}

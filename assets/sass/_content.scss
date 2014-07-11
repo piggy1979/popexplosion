@@ -329,11 +329,11 @@ a.merch span{
 		@include perspective(600px);
 		width:100%;
 		float:left;
-		h3{@include font-size(3);}
+		h3{@include font-size(2.3);}
 		strong{
 			color:#999;
 			font-weight:600;
-			@include font-size(2);
+			@include font-size(1.8);
 			margin-top:5px;
 			display:block;
 		}
@@ -452,12 +452,19 @@ a.maps{
 	padding:35px 20px;
 	display:block;
 	font-weight:800;
+	height:90px;
 	cursor:pointer;
 	font-family: $headerfont;
 }
-#date-filter span.active{
-	text-decoration:underline;
+//#date-filter span.active{
+//	text-decoration:underline;
+//}
+#date-filter span.active strong{
+	border-bottom:5px solid #fff;
+	display:inline-block;
+	padding-bottom:8px;
 }
+
 
 span.fdate21{background-color:#ee5371;}
 span.fdate22{background-color:#f66a69;}

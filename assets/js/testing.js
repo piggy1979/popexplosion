@@ -320,6 +320,7 @@ function searchBtn(){
 }
 
 function dropdownMenu(){
+	
 
 	var mouse_pos = false;
 
@@ -379,14 +380,18 @@ function fullLinking(n){
 
 function init(){
 	// base jquery mod prep
+	if(!document.getElementById('mainnavmobile')){ 
 	$("#menu-primary-navigation").clone().attr('id', 'stickymenu').appendTo('body');
 	$stickymenu = $("#stickymenu");
+	}
 
 	resizeFunction();
 	mobileNav();
 	searchBtn();
 	setupSchedule();
-	dropdownMenu();
+	if(!document.getElementById('mainnavmobile')){ 
+		dropdownMenu();
+	}
 	fullLinking($('.news-cta'));
 }
 

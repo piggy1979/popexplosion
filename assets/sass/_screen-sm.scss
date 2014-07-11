@@ -61,6 +61,12 @@ body{padding-top:43px;}
 #mixincontainer .mix .eventdescription{
 	width:60%;
 }
+#mixincontainer .mix .eventdescription h3{
+	@include font-size(3);
+}
+#mixincontainer .mix .eventdescription strong{
+	@include font-size(2);
+}
 .eventdetails{float:right;}
 
 .sites li{
