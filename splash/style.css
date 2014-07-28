@@ -1,0 +1,111 @@
+html,body{
+	height:100%;
+	margin:0;
+background: #f7a045; /* Old browsers */
+background: -moz-linear-gradient(top,  #f7a045 0%, #f05a8a 98%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7a045), color-stop(98%,#f05a8a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f7a045 0%,#f05a8a 98%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f7a045 0%,#f05a8a 98%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f7a045 0%,#f05a8a 98%); /* IE10+ */
+background: linear-gradient(to bottom,  #f7a045 0%,#f05a8a 98%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7a045', endColorstr='#f05a8a',GradientType=0 ); /* IE6-9 */
+
+}
+#container{
+	overflow:hidden;
+	padding: 50px 0 20px 0;
+
+}
+h1{
+	text-indent:-10000em;
+	margin: 0 auto;
+	background: url(/img/logo-big.png) no-repeat;
+	width:302px;
+	height:310px;
+	background-size: 302px 310px;
+}
+h2,p{
+	display:none;
+}
+h3{
+	font-family: "futura-pt",sans-serif;
+	font-size: 35px;
+	color:#fff;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+	display: inline-block;
+	text-transform: uppercase;
+	padding:10px 0px;
+}
+.share{
+	margin: 20px 0 20px;
+	padding:0;
+	text-align:center;
+	overflow:hidden;
+	vertical-align: top;
+}
+.share li{
+	background-color: #000;
+	display:inline-block;
+	margin: 0px 2px;
+	vertical-align: top;
+}
+sup{
+	font-size:16px;
+}
+.share li a{
+	display:block;
+	height:52px;
+	width:52px;
+	text-indent:-10000em;
+}
+.share li.contact a{
+	width: auto;
+	text-indent:0;
+	font-family: 'Grand Hotel', cursive;
+	color:#fff;
+	font-size:28px;
+	text-align:center;
+	text-decoration: none;
+	line-height: 52px;
+	padding: 0 35px;
+	-webkit-font-smoothing: antialiased;
+}
+.share li:hover{
+	background-color: #1c9bc6;
+}
+.facebook{
+	background: url(/img/facebook.svg) no-repeat;
+	background-size: 28px 28px;
+	background-position: 50% 50%;
+}
+.twitter{
+	background: url(/img/twitter.svg) no-repeat;
+	background-size: 28px 28px;
+	background-position: 50% 50%;
+}
+span{
+	display: block;
+	text-align:center;
+}
+span a{
+	font-family: "futura-pt-condensed",sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	color:#fff;
+	text-decoration:none;
+}
+span a:after{
+	content: '';
+	width:12px;
+	height:12px;
+	display: inline-block;
+	background: url(/img/arrow.png) no-repeat;
+	background-size: 10px 10px;
+	background-position: 50% 50%;
+	margin-left:4px;
+}
+span a:hover{
+	padding-bottom:3px;
+	border-bottom: 2px solid #fff;
+}

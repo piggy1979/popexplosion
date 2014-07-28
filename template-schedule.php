@@ -9,9 +9,8 @@ Template Name: Schedule Template
 		<li>Showing:</li>
 		<li><span class="btn filter" data-filter=".music">Music</span></li>
 		<li><span class="btn filter" data-filter=".comedy">Comedy</span></li>
-		<li><span class="btn filter" data-filter=".film">Film</span></li>
 		<li><span class="btn filter" data-filter=".talks">Pop!Talks</span></li>
-		<li><span class="btn filter" data-filter=".film">Pop!Expo</span></li>
+		<li><span class="btn filter" data-filter=".special">Special Events</span></li>
 	</ul>
 
 	<ul id="date-filter">

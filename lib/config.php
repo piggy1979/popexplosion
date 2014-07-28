@@ -57,7 +57,7 @@ function roots_display_sidebar() {
       'is_404',
       'is_front_page',
       'is_search', 
-      array('is_page', array('lineup', 'contact', 'schedule')),
+      array('is_page', array('lineup', 'contact', 'tickets', 'schedule', 'city-guide','get-involved','partners')),
       array('is_singular', array('marcato_artist', 'marcato_show'))
     ),
     /**

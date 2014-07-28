@@ -12,10 +12,10 @@
       <h2 class="entry-title"><?php the_title(); ?></h2>
       <?php get_template_part('templates/entry-meta'); ?>
     </header>
-    <div class="entry-content">
+    <div class="entry-content sitecontent">
       <?php the_content(); ?>
       <div class="articlesocial">
-        <a class='btn' href="<?php echo site_url(); ?>news">Back</a>
+        <a class='btn' href="/news">Back</a>
 
         <ul class="rrssb-buttons">
 

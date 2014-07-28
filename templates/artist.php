@@ -87,9 +87,9 @@
 
         <!-- cta -->
         <div class="col-sm-5">
-          <h2>Call to Action to Buy Tickets</h2>
-           <p>Lorem ipsum dolor sit amet, consectetur esentium, expedita quia eveniet molestias et alias minima consectetur dolorum nesciunt unde, voluptatum doloribus saepe! Quibusdam officia, eius optio natus voluptatum nesciunt est quo deleniti animi rerum dolore beatae, quia tempore maiores saepe, magnam quasi cumque provident dicta doloremque sequi asperiores soluta. Nulla, blanditiis!</p>
-          <p><a class='btn buy' href='#'>Buy Tickets</a>
+          <h2>Grab a Pass</h2>
+           <p>All HPX passes include access to music, comedy, parties and more! EARLY BIRD PRICING and PERKS end August 22nd!</p>
+          <p><a class='btn buy' href='/tickets'>Buy Tickets</a>
         </div>
 
         <!-- similar artists -->

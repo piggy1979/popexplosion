@@ -83,6 +83,7 @@ padding-top: 94px;
 #mobilecontainer .mix .articlesocial{
 display:none;
 }
+#mobilecontainer .maincontainer{padding-top:50px; padding-bottom:20px;}
 #mobilecontainer .mix .eventdescription p{
 	margin: 20px 0 10px;
 }
@@ -102,6 +103,8 @@ display:none;
 		padding:10px;
 	}
 }
+#mobilecontainer .slidecontent{top:30%;}
+
 #mobilecontainer #date-filter li:first-child{
 	display:block;
 	width:100%;
@@ -112,4 +115,23 @@ display:none;
 		display:block;
 		padding:10px;
 	}
+}
+#mobilecontainer #sponsorbar li{width:19.5%;}
+#mobilecontainer footer .widget{
+	padding-bottom:0;
+}
+#mobilecontainer .flexslider{height:270px !important;}
+#mobilecontainer .slide{height:270px !important;}
+#mobilecontainer .flex-control-nav{bottom:20px !important;}
+
+#mobilecontainer a.back{
+	top:8px;
+}
+#mobilecontainer #lineup-filter{padding:10px;}
+#mobilecontainer select{margin-bottom:20px;}
+#mobilecontainer aside.sidebar h3{display:none;}
+#mobilecontainer #lineup-filter span{padding:0;}
+#mobilecontainer #emailform{
+	padding-top: 6%;
+	padding-bottom:7%;
 }

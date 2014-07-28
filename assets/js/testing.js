@@ -71,7 +71,7 @@
 function resizeFunction(){
 	var bannerHeight = $('header.banner').height();
 	var windowHeight = $(window).height();
-	var newHeight = windowHeight-bannerHeight;
+	var newHeight = windowHeight-bannerHeight+20;
 	$(".flexslider").height(newHeight);
 	$(".slide").height(newHeight);
 	$.each($(".slidecontent"), function(evt){
@@ -338,7 +338,7 @@ function dropdownMenu(){
 
 		var px = $parent.offset().top + 30;
 		var py = $parent.offset().left;
-		var pw = py + 24;
+		var pw = py + 14;
 
 		$this.appendTo("body");
 		$this.css({
@@ -391,8 +391,8 @@ function init(){
 	setupSchedule();
 	if(!document.getElementById('mainnavmobile')){ 
 		dropdownMenu();
+		fullLinking($('.news-cta'));
 	}
-	fullLinking($('.news-cta'));
 }
 
 $(function(){

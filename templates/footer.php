@@ -36,13 +36,13 @@ $emailform->creategetresponseMiniForm();
 
 <div id="sponsorbar">
 	<div class="wrap container">
-		<div class="col-sm-offset-2 col-sm-8">
+		<div class="col-sm-12">
 			<ul>
-				<li><img src="/img/sponsor-1.jpg"></li>
-				<li><img src="/img/sponsor-1.jpg"></li>
-				<li><img src="/img/sponsor-1.jpg"></li>
-				<li><img src="/img/sponsor-1.jpg"></li>
-				<li><img src="/img/sponsor-1.jpg"></li>
+				<li><img src="/img/live105.png" style="max-width: 105px;"></li>
+				<li><img src="/img/lixar.png" style="max-width: 83px;"></li>
+				<li><img src="/img/molson.png" style="max-width: 130px;"></li>
+				<li><img src="/img/impact.png" style="max-width: 115px;"></li>
+				<li><img src="/img/thecoast.png" style="max-width: 132px;"></li>
 			</ul>
 		</div>
 	</div>
@@ -53,7 +53,7 @@ $emailform->creategetresponseMiniForm();
   <div class="container">
     <?php dynamic_sidebar('sidebar-footer'); ?>
     <section id="copyright">
-    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>&nbsp; / &nbsp;<a href="http://makeone.ca">Made by <strong>Impact</strong></a></p>
     <ul>
 		<li><a href="http://halifaxpopexplosion.com">Halifax Pop Explosion</a></li>
 		<li class="hide">/</li>

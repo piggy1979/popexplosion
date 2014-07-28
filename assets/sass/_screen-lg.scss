@@ -1,6 +1,16 @@
+/*@media all and (min-width: 1200px) {
+	.home .maincontainer, .home #socialbar .container{width:1120px;}
+header .btn.buy{
+	top:46px;
+}
+}
+*/
 @media all and (min-width: 1200px) {
 	.home .maincontainer, .home #socialbar .container{width:1120px;}
 header .btn.buy{
 	top:46px;
+}
+#menu-secondary-nav li{
+	padding:16px 16px 16px 6px;
 }
 }

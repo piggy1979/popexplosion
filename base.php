@@ -32,9 +32,13 @@
 <?php endif; ?>
 
     <div class="content row">
-      <?php if (roots_display_sidebar()) : ?>
+      <?php 
+      $colspan12 = "col-sm-12";
+
+      if (roots_display_sidebar()) : ?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
           <?php 
+          $colspan12 = "";
           if(get_post_type($post) == 'post' || $post->post_name == "news" || is_archive() || is_woocommerce()){
             include roots_sidebar_path(); 
           }else{
@@ -95,7 +99,7 @@
           ?>
         </aside><!-- /.sidebar -->
       <?php endif; ?>
-      <main class="main <?php echo roots_main_class(); ?>" role="main">
+      <main class="main <?php echo $colspan12 . roots_main_class(); ?>" role="main">
         <?php  include roots_template_path(); ?>
       </main><!-- /.main -->
 

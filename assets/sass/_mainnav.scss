@@ -116,13 +116,13 @@ header#mainnav.fixed{
 #menu-primary-navigation li a:hover:after, #menu-primary-navigation li.active a:after,
 #stickymenu li a:hover:after, #stickymenu li.active a:after
 {right:6px;}
-#menu-secondary-nav{clear:left; margin-left:7px; margin-top:-20px;overflow:hidden;}
+#menu-secondary-nav{clear:left; margin-left:17px; margin-top:-20px;overflow:hidden;}
 #menu-secondary-nav li{
 	font-family: $headerfont;
 	font-weight: 700;
 	float:left;
 	@include font-size(1.4);
-	padding:16px;
+	padding:16px 6px;
 	a{color:#fff; text-transform: uppercase;
 		&:hover{
 			color: #fff;

@@ -85,7 +85,7 @@ article.marcato_artist div {padding-bottom:40px;}
 	float:right;
 }
 .rrssb-buttons .facebook a{
-	background: url("../img/facebook.svg") no-repeat 8px 50%;
+	background: url("/img/facebook.svg") no-repeat 8px 50%;
 	background-size: 16px 16px;
 }
 
@@ -277,7 +277,7 @@ a.merch span{
 /* gravity form styles */
 .gform_wrapper{
 	max-width:768px;
-	padding:20px;
+	padding:0px;
 }
 .gform_validation_container{
 	display:none;
@@ -625,4 +625,27 @@ border-radius: 0;
 	&:hover{
 		color: $linkcolor;
 	}
+}
+.single-marcato_artist .maincontainer{
+	padding-bottom:0
+}
+.sitecontent li.gfield, .sitecontent .rrssb-buttons li {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    margin-left: 0;
+    padding-left: 0;
+}
+.marcato_artist{
+	margin-left:-19px;
+	margin-right:-19px;
+}
+.venues hr{
+	border-style: dashed;
+	margin-top:1.8em;
+	margin-bottom:1.8em;
+}
+.partners .main a {
+	margin-top:20px;
+	margin-bottom:20px;
+    display: inline-block;
+    width: 32%;
 }

@@ -288,7 +288,7 @@ function fetchShows(){
 
 	// build opening of the section.
 	foreach($query->posts as $post){
-		$type = strtolower(getCat($post->ID));
+		$type = currentTypes($post->ID);
 		$date = "date" . date( 'd', get_post_meta($post->ID, 'marcato_show_start_time_unix')[0] );
 		$output .= "<section class=\"mix " . $type . " " . $date . "\">\n";
 		$output .= "<div class='eventdescription'>\n";
@@ -409,6 +409,18 @@ function getSimilar($id){
 
 }
 
+// should have jsut made these 1 function whatever to late now.
+function currentTypes($id){
+	$term_id = get_the_terms($id, 'marcato_type');
+	$terms = "";
+	foreach($term_id as $genre){
+	//	print_r($genre->name);
+		$terms .= strtolower($genre->name) . " ";
+	}
+
+	return $terms;
+}
+
 function currentTax($id){
 	$term_id = get_the_terms($id, 'marcato_genre');
 	foreach($term_id as $genre){
@@ -519,8 +531,9 @@ function shoppingCart(){
 
 function getTwitterName($n){
 	$segments = explode("/", $n);
-	$length = count($segments);
-	return '@' . $segments[$length-1];
+	//print_r(array_filter($segments));
+	$length = count(array_filter($segments));
+	return '@' . $segments[$length];
 }
 
 function limit_words($string, $word_limit){
@@ -587,6 +600,54 @@ remove_filter('comments_template', 'dsq_comments_template');
 return $file;
 
 }
+
+function searchfilter($query) {
+    if ($query->is_search && !is_admin() ) {
+        $query->set('post_type',array('post','page','marcato_artist','marcato_show'));
+    }
+return $query;
+
+}
+
+/* venues shortcode */
+
+add_shortcode('marcatoitems', 'getMarcatoItems');
+
+
+function getMarcatoItems($attr){
+	extract( shortcode_atts(array(
+		'count' => '20',
+		'type'	=> 'venue',
+		'order' => 'ASC',
+		'orderby' => 'title'
+	), $attr));
+
+
+	$args = array(
+		'post_type'			=> 'marcato_' . $type ,
+		'posts_per_page'	=> $count,
+		'orderby'			=> $orderby,
+		'order'				=> $order
+	);
+
+	$query = new WP_Query($args);
+	$output = "";
+	$count = 0;
+	foreach($query->posts as $post){
+		if($count !== 0) $output .= "<hr>\n";
+		$count++;
+		$googlemaps = rawurlencode(" ". get_post_meta($post->ID, 'marcato_venue_street')[0] .",Halifax NS");
+		$link = "<a class='maps fancybox.iframe' href=\"https://www.google.com/maps/embed/v1/place?key=AIzaSyApi6sfP5n-DEVKtPHJt8Lfbc4R1_r4Z8U&q=".$googlemaps."\">".$post->post_title."</a>\n";
+		$output .=  "<p><strong>". $link . "</strong></p>";
+		if(get_post_meta($post->ID, 'marcato_venue_description')[0]) $output .= "<p>".get_post_meta($post->ID, 'marcato_venue_description')[0]."</p>";
+
+	}
+	return $output;
+
+}
+
+
+
 
 function custom_mobile_widget(){
 //	echo "test test";
